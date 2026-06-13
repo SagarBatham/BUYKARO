@@ -32,7 +32,7 @@ const registerUserValidation = [
         .withMessage("Last Name is required"),
     body("role")
         .optional()
-        .isIn(["user",seller])
+        .isIn(["user","seller"])
         .withMessage("Role must be either User or Seller"),
     responseWithValidation
 ]

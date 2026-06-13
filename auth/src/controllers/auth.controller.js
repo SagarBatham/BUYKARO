@@ -6,8 +6,7 @@ const redis = require("../db/redis")
 
 async function registerUser(req, res) {
     const { username, email, password, fullName: {
-        firstName, lastName ,role
-    } } = req.body
+        firstName, lastName},role } = req.body
 
     const isUserAlreadyExists = await userModel.findOne({
         $or: [
