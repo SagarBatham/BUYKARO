@@ -2,10 +2,10 @@ const jwt = require("jsonwebtoken")
 
 function createAuthMiddleware(role = ["user"]) {
     return function authMiddlewareCart(req, res, next) {
-        const { token } = req.cookies || req.header.authorization?.split(' ')[1];
+        const token  = req.cookies.token || req.headers?.authorization?.split(' ')[1];
 
         if(!token){
-            res.status(401).json({
+            return res.status(401).json({
                 message:"Unauthorized:No Token Provided"
             })
         }
