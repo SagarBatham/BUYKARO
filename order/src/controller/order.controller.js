@@ -111,7 +111,7 @@ async function getOrderbyId(req,res) {
     const orderId =req.params.id
 
     try {
-        const order=await orderModel.findById({orderId})
+        const order=await orderModel.findById(orderId)
 
         if(!order){
             return res.status(404).json({
