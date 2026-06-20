@@ -39,12 +39,20 @@ const graph = new StateGraph(MessagesAnnotation)
 
                 const tool = tools[call.name];
 
-                const payload = {
-                    ...call.args,
-                    token: config.metadata.token
-                };
+                // Normalize call.args to an object and attach token from config
+                const token = config?.metadata?.token;
+                let args = call.args;
+                if (typeof args === "string") {
+                    args = { input: args };
+                } else if (args == null) {
+                    args = {};
+                }
 
-                // Not logging tool payload (may contain tokens)
+                if (!Object.prototype.hasOwnProperty.call(args, "token")) {
+                    args.token = token;
+                }
+
+                const payload = args;
 
                 const result = await tool.invoke(payload);
 

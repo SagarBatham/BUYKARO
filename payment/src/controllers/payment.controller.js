@@ -1,7 +1,7 @@
 const paymentModel = require("../model/payment.model");
 const axios = require("axios");
 const Razorpay = require("razorpay");
-
+const{publishToQueue}=require("../broker/broker")
 const razorpay = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
     key_secret: process.env.RAZORPAY_KEY_SECRET,
@@ -66,13 +66,9 @@ async function createPayment(req, res) {
 }
 
 async function verifyPayment(req, res) {
-    try {
-        const {
-            razorpayOrderId,
-            paymentId,
-            signature,
-        } = req.body;
+    const { razorpayOrderId, paymentId, signature } = req.body;
 
+    try {
         const {
             validatePaymentVerification,
         } = require("razorpay/dist/utils/razorpay-utils");
@@ -87,6 +83,16 @@ async function verifyPayment(req, res) {
         );
 
         if (!isValid) {
+            await publishToQueue(
+                "PAYMENT_NOTIFICATION.PAYMENT_FAILED",
+                {
+                    email: req.user.email,
+                    orderId: razorpayOrderId,
+                    paymentId,
+                    reason: "Invalid Payment Signature",
+                }
+            );
+
             return res.status(400).json({
                 message: "Invalid Signature",
             });
@@ -109,12 +115,35 @@ async function verifyPayment(req, res) {
 
         await payment.save();
 
+        await publishToQueue(
+            "PAYMENT_NOTIFICATION.PAYMENT_COMPLETED",
+            {
+                email: req.user.email,
+                orderId: payment.order,
+                paymentId: payment.paymentId,
+                amount: payment.price.amount,
+                currency: payment.price.currency,
+                userName: req.user.username,
+            }
+        );
+
         return res.status(200).json({
             message: "Payment Verified Successfully",
             payment,
         });
+
     } catch (error) {
         console.log(error);
+
+        await publishToQueue(
+            "PAYMENT_NOTIFICATION.PAYMENT_FAILED",
+            {
+                email: req.user.email,
+                orderId: razorpayOrderId,
+                paymentId,
+                reason: error.message,
+            }
+        );
 
         return res.status(500).json({
             message: "Internal Server Error",
