@@ -9,6 +9,10 @@ connectToDb()
 app.use(express.json())
 app.use(cookieParser())
 
+app.get("/",(req,res)=>{
+    res.status(200).json({message:"Cart Service is Running."})
+})
+
 app.use("/api/cart",cartRoutes)
 
 module.exports=app

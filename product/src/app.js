@@ -8,6 +8,9 @@ const app=express()
 connectToDb()
 app.use(express.json())
 app.use(cookieParse())
+app.get("/",(req,res)=>{
+    res.status(200).json({message:"Product Service is Running."})
+})
 app.use("/api/products",productRoutes)
 
 module.exports=app

@@ -1,6 +1,7 @@
 const { default: mongoose } = require('mongoose')
 const productModel = require('../model/product.model')
 const { uploadImage } = require('../services/imageService')
+const { publishToQueue } = require('../broker/broker')
 
 async function createProduct(req, res) {
   try {
@@ -23,6 +24,8 @@ async function createProduct(req, res) {
       seller,
       images
     })
+
+    await publishToQueue0("PRODUCT_SELLER_DASHBOARD.PRODUCT_CREATED",product)
 
     res.status(201).json(product)
   } catch (error) {

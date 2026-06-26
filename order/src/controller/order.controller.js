@@ -1,3 +1,4 @@
+const { publishToQueue } = require("../broker/broker");
 const orderModel = require("../model/order.model");
 const axios = require("axios");
 
@@ -112,6 +113,8 @@ async function getOrderbyId(req,res) {
 
     try {
         const order=await orderModel.findById(orderId)
+
+        await publishToQueue("ORDER_SELLER_DASHBOARD.ORDER_CREATED",order)
 
         if(!order){
             return res.status(404).json({
