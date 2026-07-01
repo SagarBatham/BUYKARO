@@ -1,18 +1,15 @@
 const mongoose = require("mongoose");
 
 async function connectToDb() {
-    // Skip connecting to real DB in test environment to avoid open handles
-    if (process.env.NODE_ENV === 'test') {
-        console.log('Skipping DB connect in test')
-        return
-    }
-
+    console.log("MONGODB_URL exists:", !!process.env.MONGODB_URL);
+    console.log(process.env.MONGODB_URL);
+    
     try {
-        await mongoose.connect(process.env.MONGODB_URL)
-        console.log("Connected to DB successfully")
+        await mongoose.connect(process.env.MONGODB_URL);
+        console.log("Connected to DB successfully");
     } catch (error) {
-        console.log("Error:", error)
-        process.exit(1)
+        console.error(error);
+        process.exit(1);
     }
 }
 

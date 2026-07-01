@@ -20,7 +20,7 @@ const searchProduct = tool(
         const getHeaders = token ? { Authorization: `Bearer ${token}` } : {};
 
         const response = await axios.get(
-            `http://localhost:3001/api/products?q=${encodeURIComponent(searchQuery)}`,
+            `http://buykaro-alb-786683605.ap-south-1.elb.amazonaws.com/api/products?q=${encodeURIComponent(searchQuery)}`,
             {
                 headers: getHeaders
             }
@@ -81,7 +81,7 @@ const addProductToCart = tool(
             console.log("Posting to cart, hasAuthHeader=", !!postHeaders.Authorization);
 
             const response = await axios.post(
-                "http://localhost:3002/api/cart/items",
+                "http://buykaro-alb-786683605.ap-south-1.elb.amazonaws.com/api/cart/items",
                 {
                     productId,
                     qty

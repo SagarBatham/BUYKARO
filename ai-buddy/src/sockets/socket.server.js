@@ -6,6 +6,7 @@ const agent = require("../agent/agent");
 
 async function initSocketServer(httpServer) {
     const io = new Server(httpServer, {
+        path:"/api/socket/socket.io/",
         cors: {
             origin: "*",
             credentials: true,

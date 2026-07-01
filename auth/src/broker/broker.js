@@ -15,20 +15,35 @@ async function connect() {
 }
 
 async function publishToQueue(queueName,data={}) {
-    if(!channel || !connection) await connect()
+    try {
+        if(!channel || !connection) await connect()
+
+        if(!channel || !connection) {
+            console.warn("RabbitMQ unavailable, skipping queue publish", queueName)
+            return false
+        }
 
         await channel.assertQueue(queueName,{
             durable:true
         })
 
         channel.sendToQueue(queueName,Buffer.from(JSON.stringify(data)))
-        console.log("Message send to Queue ",queueName,data);
-        
+        console.log("Message send to Queue ",queueName,data)
+        return true
+    } catch (error) {
+        console.error("Failed to publish message to queue", queueName, error)
+        return false
+    }
 }
 
 async function subscribeToQueue(queueName,callback) {
-    
-    if(!channel || !connection) await connect()
+    try {
+        if(!channel || !connection) await connect()
+
+        if(!channel || !connection) {
+            console.warn("RabbitMQ unavailable, skipping queue subscription", queueName)
+            return false
+        }
 
         await channel.assertQueue(queueName,{
             durable:true
@@ -41,6 +56,12 @@ async function subscribeToQueue(queueName,callback) {
                 channel.ack(msg)
             }
         })
+
+        return true
+    } catch (error) {
+        console.error("Failed to subscribe to queue", queueName, error)
+        return false
+    }
 }
 
 module.exports={

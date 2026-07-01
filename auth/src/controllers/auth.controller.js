@@ -6,8 +6,17 @@ const redis = require("../db/redis")
 const { publishToQueue } = require("../broker/broker")
 
 async function registerUser(req, res) {
-    const { username, email, password, fullName: {
+    const { username: incomingUsername, email, password, fullName: {
         firstName, lastName},role } = req.body
+
+    const emailLocalPart = (email || '').split('@')[0] || ''
+    const derivedUsername = (incomingUsername || emailLocalPart || `${firstName || 'user'}`)
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9._-]/g, '')
+        .slice(0, 20)
+
+    const username = derivedUsername || `user${Date.now()}`
 
     const isUserAlreadyExists = await userModel.findOne({
         $or: [
@@ -33,7 +42,7 @@ async function registerUser(req, res) {
     })
     
 
-    await Promise.all([
+    await Promise.allSettled([
         publishToQueue("AUTH_NOTIFICATION.USER_CREATED",{
         id:user.id,
         username:user.username,

@@ -23,7 +23,7 @@ async function createPayment(req, res) {
 
         const fetchOrder = (
             await axios.get(
-                `http://localhost:3003/api/orders/${orderId}`,
+                `http://buykaro-alb-786683605.ap-south-1.elb.amazonaws.com/api/orders/${orderId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
