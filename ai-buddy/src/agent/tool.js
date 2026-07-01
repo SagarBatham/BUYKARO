@@ -4,7 +4,6 @@ const axios = require("axios");
 
 const searchProduct = tool(
     async (data) => {
-
         const searchQuery =
             typeof data === "string"
                 ? data
@@ -19,28 +18,36 @@ const searchProduct = tool(
 
         const getHeaders = token ? { Authorization: `Bearer ${token}` } : {};
 
-        const response = await axios.get(
-            `http://localhost:3001/api/products?q=${encodeURIComponent(searchQuery)}`,
-            {
-                headers: getHeaders
+        try {
+            const response = await axios.get(
+                `https://product-service-wxqz.onrender.com/api/products?q=${encodeURIComponent(searchQuery)}`,
+                {
+                    headers: getHeaders
+                }
+            );
+
+            const products = response.data.data || [];
+
+            if (products.length === 0) {
+                return JSON.stringify({
+                    found: false
+                });
             }
-        );
 
-        const products = response.data.data || [];
-
-        if (products.length === 0) {
+            // Return only first product
             return JSON.stringify({
-                found: false
+                found: true,
+                productId: products[0]._id,
+                title: products[0].title,
+                price: products[0].price.amount
+            });
+        } catch (err) {
+            console.error("searchProduct error:", err.response?.data || err.message || err);
+            return JSON.stringify({
+                found: false,
+                error: typeof err === "string" ? err : err.message || "Product search failed"
             });
         }
-
-        // Return only first product
-        return JSON.stringify({
-            found: true,
-            productId: products[0]._id,
-            title: products[0].title,
-            price: products[0].price.amount
-        });
     },
     {
         name: "searchProduct",
@@ -81,7 +88,7 @@ const addProductToCart = tool(
             console.log("Posting to cart, hasAuthHeader=", !!postHeaders.Authorization);
 
             const response = await axios.post(
-                "http://localhost:3002/api/cart/items",
+                "https://cart-service-q4y8.onrender.com/api/cart/items",
                 {
                     productId,
                     qty

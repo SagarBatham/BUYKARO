@@ -10,6 +10,7 @@ const responseWithValidation = (req, res, next) => {
 
 const registerUserValidation = [
     body("username")
+        .optional({ values: 'falsy' })
         .isString()
         .withMessage("Username must be a String")
         .isLength({ min: 3 })

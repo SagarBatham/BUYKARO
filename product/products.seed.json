@@ -1,0 +1,1902 @@
+[
+  {
+    "_id": "a79392880ed06be66e1375b4",
+    "title": "Nike Running Shoe 1",
+    "description": "Nike running shoe — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3787,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/nike-running-shoe-1-1786288491665_bXjrQZ8pM.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/nike-running-shoe-1-1786288491665_bXjrQZ8pM.jpg",
+        "id": "f46e9100e6c829425c1fb1a6",
+        "_id": "65395b47d80d55c5b4cb6d84"
+      }
+    ],
+    "stock": 38
+  },
+  {
+    "_id": "5889586e0ec1846f857e4744",
+    "title": "Adidas Sneaker 2",
+    "description": "Adidas sneaker — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3310,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/adidas-sneaker-2-1786288496110_lkKc54hSh.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/adidas-sneaker-2-1786288496110_lkKc54hSh.jpg",
+        "id": "772b049583e084fb1db8e0c1",
+        "_id": "2a4d826231e70060b5f58354"
+      }
+    ],
+    "stock": 44
+  },
+  {
+    "_id": "15b0245146af2515f152f534",
+    "title": "Puma Running Shoe 3",
+    "description": "Puma running shoe — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3538,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/puma-running-shoe-3-1786288499391_Rd4I3muQ5.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/puma-running-shoe-3-1786288499391_Rd4I3muQ5.jpg",
+        "id": "42a348da040eab2b9295a7e0",
+        "_id": "8ef911f392e0c597745cd690"
+      }
+    ],
+    "stock": 52
+  },
+  {
+    "_id": "ff7c54b9c768e31cdff803cb",
+    "title": "Reebok Sneaker 4",
+    "description": "Reebok sneaker — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 5972,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/reebok-sneaker-4-1786288502197_ocwXqXPPH.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/reebok-sneaker-4-1786288502197_ocwXqXPPH.jpg",
+        "id": "178e5e2d64e2d7209f156b8f",
+        "_id": "aee89e46614434cf3a21e666"
+      }
+    ],
+    "stock": 42
+  },
+  {
+    "_id": "8d34f4fc54d97b20ad759a85",
+    "title": "Skechers Running Shoe 5",
+    "description": "Skechers running shoe — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 4597,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/skechers-running-shoe-5-1786288505251_rMqgRZuXQ.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/skechers-running-shoe-5-1786288505251_rMqgRZuXQ.jpg",
+        "id": "7c12e826ebffc652bb29e0e0",
+        "_id": "1e06bc98f9a6efab12222014"
+      }
+    ],
+    "stock": 46
+  },
+  {
+    "_id": "0440038112dccae880041879",
+    "title": "Nike Sneaker 6",
+    "description": "Nike sneaker — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 5885,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/nike-sneaker-6-1786288508507_4zJXjtTcn.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/nike-sneaker-6-1786288508507_4zJXjtTcn.jpg",
+        "id": "c0498e2fd6bada129f980f96",
+        "_id": "204b7d9a1ffb638cbd266a68"
+      }
+    ],
+    "stock": 5
+  },
+  {
+    "_id": "d6183be6c4ba9cc4c05b6560",
+    "title": "Adidas Running Shoe 7",
+    "description": "Adidas running shoe — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 4898,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/adidas-running-shoe-7-1786288512047_1ZqKctYlZ.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/adidas-running-shoe-7-1786288512047_1ZqKctYlZ.jpg",
+        "id": "67cea78f10611883b069da07",
+        "_id": "e7b5a73d30aaac5b8c5b5521"
+      }
+    ],
+    "stock": 36
+  },
+  {
+    "_id": "2c67cd6daa3cc41cc54ef7f5",
+    "title": "Puma Sneaker 8",
+    "description": "Puma sneaker — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3040,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/puma-sneaker-8-1786288515454_oxl9pnQeJ.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/puma-sneaker-8-1786288515454_oxl9pnQeJ.jpg",
+        "id": "17a3508db8a934f87efb2f2e",
+        "_id": "731157f86a14162d8685c7bf"
+      }
+    ],
+    "stock": 10
+  },
+  {
+    "_id": "a2d81676213a8ea7e0743dd7",
+    "title": "Reebok Running Shoe 9",
+    "description": "Reebok running shoe — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2920,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/reebok-running-shoe-9-1786288519083_s8H-aFl2M.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/reebok-running-shoe-9-1786288519083_s8H-aFl2M.jpg",
+        "id": "ba4d4f096b45c99019476cd5",
+        "_id": "ab53ceb2e0eaaa47f9129c55"
+      }
+    ],
+    "stock": 33
+  },
+  {
+    "_id": "9698d47e28bfae088baa762f",
+    "title": "Skechers Sneaker 10",
+    "description": "Skechers sneaker — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 5692,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/skechers-sneaker-10-1786288522107_E81ZiQALU.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/skechers-sneaker-10-1786288522107_E81ZiQALU.jpg",
+        "id": "4b75a9775d1aab971049237e",
+        "_id": "d40c7e9d963d6070cd53cc70"
+      }
+    ],
+    "stock": 25
+  },
+  {
+    "_id": "34ad0d6a057471aac6445c11",
+    "title": "Samsung Smartphone 1",
+    "description": "Samsung smartphone — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 21404,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/samsung-smartphone-1-1786288531610_qFiY-Uhtk.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/samsung-smartphone-1-1786288531610_qFiY-Uhtk.jpg",
+        "id": "d31d090fafc7a065cc8ea57c",
+        "_id": "54485655126d2598e0189424"
+      }
+    ],
+    "stock": 1
+  },
+  {
+    "_id": "b9882e8ae2e3f98c07601e0a",
+    "title": "Apple 5G Phone 2",
+    "description": "Apple 5g phone — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 42464,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/apple-5g-phone-2-1786288534969_NOo95zlBM.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/apple-5g-phone-2-1786288534969_NOo95zlBM.jpg",
+        "id": "b202db7c07204683218c5b19",
+        "_id": "56682dd23ef5764d7d9544a9"
+      }
+    ],
+    "stock": 22
+  },
+  {
+    "_id": "b05dba672c983c0f9c2b28b0",
+    "title": "OnePlus Smartphone 3",
+    "description": "OnePlus smartphone — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 26561,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/oneplus-smartphone-3-1786288538581_yDfP7gRrz.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/oneplus-smartphone-3-1786288538581_yDfP7gRrz.jpg",
+        "id": "df7539913e5c271ffbe2d4ee",
+        "_id": "c28a4d8ada99ba72e4f0e783"
+      }
+    ],
+    "stock": 37
+  },
+  {
+    "_id": "ff1e10e31a0f347463bd7e6d",
+    "title": "Xiaomi 5G Phone 4",
+    "description": "Xiaomi 5g phone — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 83337,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/xiaomi-5g-phone-4-1786288541592_lKuIhpFLP.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/xiaomi-5g-phone-4-1786288541592_lKuIhpFLP.jpg",
+        "id": "44edaa1e5332e2e1bcadd2f1",
+        "_id": "999c2e588812bf3319ea0ddb"
+      }
+    ],
+    "stock": 55
+  },
+  {
+    "_id": "833a6dea081accdc5d98e04f",
+    "title": "Realme Smartphone 5",
+    "description": "Realme smartphone — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 24980,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/realme-smartphone-5-1786288544588_PnTEj36Gu.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/realme-smartphone-5-1786288544588_PnTEj36Gu.jpg",
+        "id": "9933eaf6fbb31dc28636f494",
+        "_id": "500a1e10143d9a6ca7a8c65d"
+      }
+    ],
+    "stock": 42
+  },
+  {
+    "_id": "2c021872fce7073d74b60fa5",
+    "title": "Samsung 5G Phone 6",
+    "description": "Samsung 5g phone — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 39716,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/samsung-5g-phone-6-1786288547504_K1iaiini_.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/samsung-5g-phone-6-1786288547504_K1iaiini_.jpg",
+        "id": "097e9296013926f5fdc6038f",
+        "_id": "df43bd36febcc1601c7ec4c3"
+      }
+    ],
+    "stock": 8
+  },
+  {
+    "_id": "42bda4a470d176b06db36b1b",
+    "title": "Apple Smartphone 7",
+    "description": "Apple smartphone — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 60985,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/apple-smartphone-7-1786288550909_Nhi7wL7qZ.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/apple-smartphone-7-1786288550909_Nhi7wL7qZ.jpg",
+        "id": "dadbc7ad2264168da06b02d0",
+        "_id": "c4e59c054532cd4f0070478e"
+      }
+    ],
+    "stock": 49
+  },
+  {
+    "_id": "dfad48e6a2a69d928563d42c",
+    "title": "OnePlus 5G Phone 8",
+    "description": "OnePlus 5g phone — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 38335,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/oneplus-5g-phone-8-1786288553954_yJvyWM1UQ.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/oneplus-5g-phone-8-1786288553954_yJvyWM1UQ.jpg",
+        "id": "8e1a1ee99c5f3414575469da",
+        "_id": "02d5441a102e3f20f1189c55"
+      }
+    ],
+    "stock": 28
+  },
+  {
+    "_id": "1d976baa90794d0e8f07ca39",
+    "title": "Xiaomi Smartphone 9",
+    "description": "Xiaomi smartphone — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 76870,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/xiaomi-smartphone-9-1786288556932_PlJ9TgUA0.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/xiaomi-smartphone-9-1786288556932_PlJ9TgUA0.jpg",
+        "id": "1be90e9565e1f83ef042b756",
+        "_id": "9966522b2afa7039fcabe4da"
+      }
+    ],
+    "stock": 26
+  },
+  {
+    "_id": "f1cfcc0843d0fea6c2f56ced",
+    "title": "Realme 5G Phone 10",
+    "description": "Realme 5g phone — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 27960,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/realme-5g-phone-10-1786288560271_ooDMcqo9Q.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/realme-5g-phone-10-1786288560271_ooDMcqo9Q.jpg",
+        "id": "372fd6889d22de5d6f6e557f",
+        "_id": "82ed3e93320bb5d73696e490"
+      }
+    ],
+    "stock": 52
+  },
+  {
+    "_id": "458a1ab5ab4749fca28f582a",
+    "title": "Dell Laptop 1",
+    "description": "Dell laptop — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 122171,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/dell-laptop-1-1786288563642_3Cxelt57n.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/dell-laptop-1-1786288563642_3Cxelt57n.jpg",
+        "id": "02c9565bd6843fc1b3f338f4",
+        "_id": "82701060b30b46e1677189fa"
+      }
+    ],
+    "stock": 53
+  },
+  {
+    "_id": "01f3059a10fcb233b8a7eb5c",
+    "title": "HP Notebook 2",
+    "description": "HP notebook — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 107883,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/hp-notebook-2-1786288566696_DsbxRxM9x.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/hp-notebook-2-1786288566696_DsbxRxM9x.jpg",
+        "id": "069439b6dd1313b988e6cd5d",
+        "_id": "c919ee8621a26164e7359fe8"
+      }
+    ],
+    "stock": 14
+  },
+  {
+    "_id": "5dcf2bf2709ac40c436f6ed6",
+    "title": "Lenovo Laptop 3",
+    "description": "Lenovo laptop — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 34439,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lenovo-laptop-3-1786288569791_k1wkkweRp.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lenovo-laptop-3-1786288569791_k1wkkweRp.jpg",
+        "id": "13d4ed1e92796a76a0b03942",
+        "_id": "4191536cad578ddafda8ac25"
+      }
+    ],
+    "stock": 27
+  },
+  {
+    "_id": "9d8c2b14bc4cdf4affe69488",
+    "title": "Asus Notebook 4",
+    "description": "Asus notebook — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 38030,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/asus-notebook-4-1786288573017_00eEpKHex.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/asus-notebook-4-1786288573017_00eEpKHex.jpg",
+        "id": "2a4a77cfc804fd29ce241b8c",
+        "_id": "6bdb8791709531f3b316e8b1"
+      }
+    ],
+    "stock": 19
+  },
+  {
+    "_id": "eff07eaef4c21867bc558388",
+    "title": "Acer Laptop 5",
+    "description": "Acer laptop — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 120943,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/acer-laptop-5-1786288576190_AuyQA4gtJ.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/acer-laptop-5-1786288576190_AuyQA4gtJ.jpg",
+        "id": "98f5bfef2b69eb775099e1f5",
+        "_id": "34a83ce52aba55712b8406f6"
+      }
+    ],
+    "stock": 42
+  },
+  {
+    "_id": "c31feeee1b1cc5ccd45e3621",
+    "title": "Dell Notebook 6",
+    "description": "Dell notebook — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 117531,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/dell-notebook-6-1786288579148_HhGefj5Y7.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/dell-notebook-6-1786288579148_HhGefj5Y7.jpg",
+        "id": "656a8ae06e0907790f6ef888",
+        "_id": "01370a2277886a2163e7a78b"
+      }
+    ],
+    "stock": 15
+  },
+  {
+    "_id": "b23d5c3d5edd53cee1f5cc41",
+    "title": "HP Laptop 7",
+    "description": "HP laptop — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 127084,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/hp-laptop-7-1786288581799_jQK3yFure.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/hp-laptop-7-1786288581799_jQK3yFure.jpg",
+        "id": "18dbdcda7cb05475755ff823",
+        "_id": "9f8fdcb569f3c697442860fd"
+      }
+    ],
+    "stock": 49
+  },
+  {
+    "_id": "8aaab65bafbbcad4b1aa9439",
+    "title": "Lenovo Notebook 8",
+    "description": "Lenovo notebook — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 123624,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lenovo-notebook-8-1786288585147_rbBHYyNDg.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lenovo-notebook-8-1786288585147_rbBHYyNDg.jpg",
+        "id": "33e76d9a4dc801fe11d0209f",
+        "_id": "078ae4e8cdff497265825c26"
+      }
+    ],
+    "stock": 34
+  },
+  {
+    "_id": "711b29a37d2c45aeb34be905",
+    "title": "Asus Laptop 9",
+    "description": "Asus laptop — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 97598,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/asus-laptop-9-1786288588368_rTuUVdrER.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/asus-laptop-9-1786288588368_rTuUVdrER.jpg",
+        "id": "e5691498225ba676fd1254af",
+        "_id": "3d28f2b6bb35cef2fe9b96e1"
+      }
+    ],
+    "stock": 53
+  },
+  {
+    "_id": "3c5350a50b51246ea180bed3",
+    "title": "Acer Notebook 10",
+    "description": "Acer notebook — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 126639,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/acer-notebook-10-1786288591890_gYECa64DK.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/acer-notebook-10-1786288591890_gYECa64DK.jpg",
+        "id": "83072e140ad3dcf3593e7470",
+        "_id": "5739559fef3774dd17aa9e5c"
+      }
+    ],
+    "stock": 18
+  },
+  {
+    "_id": "92aeec6b76b510da15162582",
+    "title": "Sony Headphone 1",
+    "description": "Sony headphone — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 20712,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/sony-headphone-1-1786288594722_qq8qkS2eE.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/sony-headphone-1-1786288594722_qq8qkS2eE.jpg",
+        "id": "e0286b856906a9e81c2a32e2",
+        "_id": "fe63d2ac1b792ff6274443cc"
+      }
+    ],
+    "stock": 40
+  },
+  {
+    "_id": "d8bd8e8d9925442424e33cf2",
+    "title": "JBL Earbuds 2",
+    "description": "JBL earbuds — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 14275,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/jbl-earbuds-2-1786288597785_Osp-n3Za8.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/jbl-earbuds-2-1786288597785_Osp-n3Za8.jpg",
+        "id": "de1cc56021e5f6b5a97ddfaf",
+        "_id": "9a8dd1a9905aaa3f4494c5c2"
+      }
+    ],
+    "stock": 10
+  },
+  {
+    "_id": "86330e933cead97882ff999a",
+    "title": "Boat Headphone 3",
+    "description": "Boat headphone — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1743,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/boat-headphone-3-1786288600621_DrwZyi_Ik.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/boat-headphone-3-1786288600621_DrwZyi_Ik.jpg",
+        "id": "116e7036eabfeacf2350320c",
+        "_id": "406d9fb062b4b63e698175bc"
+      }
+    ],
+    "stock": 12
+  },
+  {
+    "_id": "113b27e0c77874aaa5ba2609",
+    "title": "Bose Earbuds 4",
+    "description": "Bose earbuds — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 8151,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/bose-earbuds-4-1786288603401_oXdoquLv6.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/bose-earbuds-4-1786288603401_oXdoquLv6.jpg",
+        "id": "1445c4de411940eb7eef84b5",
+        "_id": "4ea5e4913d931d55fcbed20d"
+      }
+    ],
+    "stock": 60
+  },
+  {
+    "_id": "855f2e8dbf296e54299e3fe1",
+    "title": "Sennheiser Headphone 5",
+    "description": "Sennheiser headphone — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 12650,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/sennheiser-headphone-5-1786288606372_xWq5Aey5Y.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/sennheiser-headphone-5-1786288606372_xWq5Aey5Y.jpg",
+        "id": "7fe09f485598d38c79564699",
+        "_id": "ee1e208d3e7e3ef195af948c"
+      }
+    ],
+    "stock": 6
+  },
+  {
+    "_id": "f2626e37088fdf7bb98108a2",
+    "title": "Sony Earbuds 6",
+    "description": "Sony earbuds — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 7709,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/sony-earbuds-6-1786288609558_yV-jKg8ew.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/sony-earbuds-6-1786288609558_yV-jKg8ew.jpg",
+        "id": "ee1dcfd912cd5a50830750df",
+        "_id": "cebbad91d2ca081bccdceb4d"
+      }
+    ],
+    "stock": 56
+  },
+  {
+    "_id": "233432c77bcc08287407d80b",
+    "title": "JBL Headphone 7",
+    "description": "JBL headphone — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 14383,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/jbl-headphone-7-1786288612614_wF0QTlHug.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/jbl-headphone-7-1786288612614_wF0QTlHug.jpg",
+        "id": "f2e311c9cd37c4a149dc4119",
+        "_id": "d6c24d3d184537c069e768a4"
+      }
+    ],
+    "stock": 50
+  },
+  {
+    "_id": "965e5e0fad0767153ca50040",
+    "title": "Boat Earbuds 8",
+    "description": "Boat earbuds — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 15638,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/boat-earbuds-8-1786288615806_M9nQYwHaG.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/boat-earbuds-8-1786288615806_M9nQYwHaG.jpg",
+        "id": "d8a5c0d8e39318c81706bbdf",
+        "_id": "0678c36b71611356b4b7c25d"
+      }
+    ],
+    "stock": 55
+  },
+  {
+    "_id": "c1e6c6d2f3951ff9f638be7f",
+    "title": "Bose Headphone 9",
+    "description": "Bose headphone — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3583,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/bose-headphone-9-1786288618875_NHkPn5qmC.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/bose-headphone-9-1786288618875_NHkPn5qmC.jpg",
+        "id": "8f2e1811f49e97b3585ee9ba",
+        "_id": "e9397b33e9525ca6e8d2127c"
+      }
+    ],
+    "stock": 56
+  },
+  {
+    "_id": "ae78911a39fdb81b4de2df9a",
+    "title": "Sennheiser Earbuds 10",
+    "description": "Sennheiser earbuds — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 18678,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/sennheiser-earbuds-10-1786288621774_WYvX-vGtC.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/sennheiser-earbuds-10-1786288621774_WYvX-vGtC.jpg",
+        "id": "6b79fc25117bdb9fb31704c9",
+        "_id": "fae94ec797544a2b0007db07"
+      }
+    ],
+    "stock": 35
+  },
+  {
+    "_id": "6c094c126972eb260bca3f97",
+    "title": "H&M T-Shirt 1",
+    "description": "H&M t-shirt — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 471,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/h_m-t-shirt-1-1786288624636_zcgDcvVO6.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/h_m-t-shirt-1-1786288624636_zcgDcvVO6.jpg",
+        "id": "bbacf8047a7db2d3d550caae",
+        "_id": "02539672b22f8a4fc476e5df"
+      }
+    ],
+    "stock": 42
+  },
+  {
+    "_id": "8161922743d774bb145a5bca",
+    "title": "Zara Polo Shirt 2",
+    "description": "Zara polo shirt — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1523,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/zara-polo-shirt-2-1786288627546_kcNIqZ9jx.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/zara-polo-shirt-2-1786288627546_kcNIqZ9jx.jpg",
+        "id": "75a86f4a81480a04202c8ae3",
+        "_id": "c2a54dedbc28107b17413e9e"
+      }
+    ],
+    "stock": 14
+  },
+  {
+    "_id": "5be2c13fa2a28997e23a37ee",
+    "title": "Levis T-Shirt 3",
+    "description": "Levis t-shirt — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1060,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/levis-t-shirt-3-1786288630915_qflp2DyB2.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/levis-t-shirt-3-1786288630915_qflp2DyB2.jpg",
+        "id": "c6304e7e6041f38975d47df8",
+        "_id": "f10ee6db312f9cfda01ba71f"
+      }
+    ],
+    "stock": 37
+  },
+  {
+    "_id": "06f7fcfb726c02867e8dd0db",
+    "title": "US Polo Polo Shirt 4",
+    "description": "US Polo polo shirt — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1984,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/us-polo-polo-shirt-4-1786288633728_B_ghw08ug.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/us-polo-polo-shirt-4-1786288633728_B_ghw08ug.jpg",
+        "id": "a59922586daacd0c2860579f",
+        "_id": "45d4ac2be3b53d79e903c878"
+      }
+    ],
+    "stock": 18
+  },
+  {
+    "_id": "d7ea5914667bfba38f5c894a",
+    "title": "Roadster T-Shirt 5",
+    "description": "Roadster t-shirt — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1491,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/roadster-t-shirt-5-1786288636694_D-SnXns9e.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/roadster-t-shirt-5-1786288636694_D-SnXns9e.jpg",
+        "id": "6b2ee409d9dca01f49967393",
+        "_id": "dd49a71bbcf025ef24a89e76"
+      }
+    ],
+    "stock": 40
+  },
+  {
+    "_id": "6492532e646b9b5f97c4aa9a",
+    "title": "H&M Polo Shirt 6",
+    "description": "H&M polo shirt — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1462,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/h_m-polo-shirt-6-1786288639547_te5S6w4qn.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/h_m-polo-shirt-6-1786288639547_te5S6w4qn.jpg",
+        "id": "24f66673137b6a58bfd88a6d",
+        "_id": "d7398f4e92a13ab201894148"
+      }
+    ],
+    "stock": 19
+  },
+  {
+    "_id": "373c44bc65465a07ffa6ad47",
+    "title": "Zara T-Shirt 7",
+    "description": "Zara t-shirt — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 667,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/zara-t-shirt-7-1786288642436_wuRQeQqwc.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/zara-t-shirt-7-1786288642436_wuRQeQqwc.jpg",
+        "id": "fe7af391837d57c4c9bf9eec",
+        "_id": "d88822963464785e64a4079b"
+      }
+    ],
+    "stock": 13
+  },
+  {
+    "_id": "c0a2349c9d94ce64f80792ea",
+    "title": "Levis Polo Shirt 8",
+    "description": "Levis polo shirt — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1796,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/levis-polo-shirt-8-1786288646089_S8RCr8T5j.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/levis-polo-shirt-8-1786288646089_S8RCr8T5j.jpg",
+        "id": "081910e88f44adbb29a48784",
+        "_id": "912bf5173675372ad121951b"
+      }
+    ],
+    "stock": 53
+  },
+  {
+    "_id": "f8eb6ad72b073821c896655c",
+    "title": "US Polo T-Shirt 9",
+    "description": "US Polo t-shirt — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 774,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/us-polo-t-shirt-9-1786288649149_UPtsIdSsa.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/us-polo-t-shirt-9-1786288649149_UPtsIdSsa.jpg",
+        "id": "45c047c4bf8d5ff8d11386e4",
+        "_id": "1d71e9b6691d356c81210d66"
+      }
+    ],
+    "stock": 26
+  },
+  {
+    "_id": "cbc61d3d79a5526877ade529",
+    "title": "Roadster Polo Shirt 10",
+    "description": "Roadster polo shirt — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 580,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/roadster-polo-shirt-10-1786288652431_iyxp1N_wx.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/roadster-polo-shirt-10-1786288652431_iyxp1N_wx.jpg",
+        "id": "a8e3102e4ca53d24d9668948",
+        "_id": "144cbb402b62d302d284e1df"
+      }
+    ],
+    "stock": 56
+  },
+  {
+    "_id": "96e9a8cf60565ab16f2c775e",
+    "title": "Levis Jeans 1",
+    "description": "Levis jeans — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2858,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/levis-jeans-1-1786288655383_TtynVAcO6.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/levis-jeans-1-1786288655383_TtynVAcO6.jpg",
+        "id": "d26135c7f9dbd01d9c52f6fb",
+        "_id": "528f98ff8db948c3aa8a3f1d"
+      }
+    ],
+    "stock": 41
+  },
+  {
+    "_id": "0c9b4ecf757ac4578a6d3081",
+    "title": "Wrangler Denim 2",
+    "description": "Wrangler denim — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2489,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/wrangler-denim-2-1786288658240_h-r_lCMjG.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/wrangler-denim-2-1786288658240_h-r_lCMjG.jpg",
+        "id": "dce4ccaebb0c8c52fbfb010b",
+        "_id": "adbae19898b509b5b33ed4e3"
+      }
+    ],
+    "stock": 18
+  },
+  {
+    "_id": "c0f84b1d94ab37d80bc839c7",
+    "title": "Pepe Jeans Jeans 3",
+    "description": "Pepe Jeans jeans — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3035,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/pepe-jeans-jeans-3-1786288661209_tKfAxg3qP.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/pepe-jeans-jeans-3-1786288661209_tKfAxg3qP.jpg",
+        "id": "2e2873be30814a9af3917400",
+        "_id": "81fae6b40a275a3eda83bdda"
+      }
+    ],
+    "stock": 27
+  },
+  {
+    "_id": "97aebaa97f49036d6d4e7bd7",
+    "title": "Lee Denim 4",
+    "description": "Lee denim — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3198,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lee-denim-4-1786288664521_9mz9d9HLxz.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lee-denim-4-1786288664521_9mz9d9HLxz.jpg",
+        "id": "3719fb61bccd2a49f4cd8423",
+        "_id": "4d53959ca03c7cc5a2f6cf26"
+      }
+    ],
+    "stock": 54
+  },
+  {
+    "_id": "b3d262bc034546bf9a3405a9",
+    "title": "Spykar Jeans 5",
+    "description": "Spykar jeans — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2341,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/spykar-jeans-5-1786288667612_UQwpnZ9Ea.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/spykar-jeans-5-1786288667612_UQwpnZ9Ea.jpg",
+        "id": "be4947532c2baa0157e5fd64",
+        "_id": "93b6240d966460e31566660a"
+      }
+    ],
+    "stock": 43
+  },
+  {
+    "_id": "0a458aeae8a0f5846d9b17f6",
+    "title": "Levis Denim 6",
+    "description": "Levis denim — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1785,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/levis-denim-6-1786288670282_8v6X0NpNo.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/levis-denim-6-1786288670282_8v6X0NpNo.jpg",
+        "id": "8add7c50c7e72ef4bd4e1be9",
+        "_id": "d38a9468128ce89b8515b70e"
+      }
+    ],
+    "stock": 33
+  },
+  {
+    "_id": "1d2fd9aabef03a756187b371",
+    "title": "Wrangler Jeans 7",
+    "description": "Wrangler jeans — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2075,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/wrangler-jeans-7-1786288673320_-sTiiHM0C.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/wrangler-jeans-7-1786288673320_-sTiiHM0C.jpg",
+        "id": "444e3289c3f3670ea36e3a4c",
+        "_id": "2ca3e1ef7e6da73aba3ee9a3"
+      }
+    ],
+    "stock": 15
+  },
+  {
+    "_id": "00a7bdd3d61c9c3c606558c1",
+    "title": "Pepe Jeans Denim 8",
+    "description": "Pepe Jeans denim — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1785,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/pepe-jeans-denim-8-1786288676830_O8wFjOu66.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/pepe-jeans-denim-8-1786288676830_O8wFjOu66.jpg",
+        "id": "21294abb78704df0d0daa3ca",
+        "_id": "2ba87ab089d9163dca543f2d"
+      }
+    ],
+    "stock": 31
+  },
+  {
+    "_id": "c6f1660bad8efda0acb88e4e",
+    "title": "Lee Jeans 9",
+    "description": "Lee jeans — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1870,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lee-jeans-9-1786288680011_RaBfivs8x.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lee-jeans-9-1786288680011_RaBfivs8x.jpg",
+        "id": "4232d2c04ca1b59c4f736af6",
+        "_id": "567656649b1a27f008987161"
+      }
+    ],
+    "stock": 41
+  },
+  {
+    "_id": "d7b821929233d0de0a584b28",
+    "title": "Spykar Denim 10",
+    "description": "Spykar denim — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3047,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/spykar-denim-10-1786288682872_8VtyRO8ft.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/spykar-denim-10-1786288682872_8VtyRO8ft.jpg",
+        "id": "caf49a88c9057b1b16ca0ea9",
+        "_id": "e21e4d6a3846e4fe3d182b97"
+      }
+    ],
+    "stock": 44
+  },
+  {
+    "_id": "4cc52423b1acd146afd48c24",
+    "title": "Hawkins Cookware Set 1",
+    "description": "Hawkins cookware set — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 4937,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/hawkins-cookware-set-1-1786288691782_Ru0iIZFJW.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/hawkins-cookware-set-1-1786288691782_Ru0iIZFJW.jpg",
+        "id": "5720fa2ead4470f7b73a0a58",
+        "_id": "1f6d95047db4704d46eaf277"
+      }
+    ],
+    "stock": 28
+  },
+  {
+    "_id": "e6fc944acdd6fcf6bef85603",
+    "title": "Wonderchef Nonstick Pan 2",
+    "description": "Wonderchef nonstick pan — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2916,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/wonderchef-nonstick-pan-2-1786288695000_0gwvqx6Yb.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/wonderchef-nonstick-pan-2-1786288695000_0gwvqx6Yb.jpg",
+        "id": "1048caa6653e9d3797b826cd",
+        "_id": "fe77e099541a42b290154c69"
+      }
+    ],
+    "stock": 24
+  },
+  {
+    "_id": "a6f0d5807392607bf3c04ed1",
+    "title": "Cello Cookware Set 3",
+    "description": "Cello cookware set — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 5069,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/cello-cookware-set-3-1786288697895_yLDoNSOTd.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/cello-cookware-set-3-1786288697895_yLDoNSOTd.jpg",
+        "id": "5d29f6c64226c9d9fdcbf1b8",
+        "_id": "4695dc01d10423239312b23a"
+      }
+    ],
+    "stock": 18
+  },
+  {
+    "_id": "e3c75d895aa088fcd1deb03a",
+    "title": "Milton Nonstick Pan 4",
+    "description": "Milton nonstick pan — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1737,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/milton-nonstick-pan-4-1786288701241_oaWovxnUL.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/milton-nonstick-pan-4-1786288701241_oaWovxnUL.jpg",
+        "id": "0819410969a4637b78611039",
+        "_id": "69591641c7d24e47da5b0ba5"
+      }
+    ],
+    "stock": 38
+  },
+  {
+    "_id": "6f0475c836f97b75860f339f",
+    "title": "Pigeon Cookware Set 5",
+    "description": "Pigeon cookware set — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3627,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/pigeon-cookware-set-5-1786288704479_LjmLy7QrD.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/pigeon-cookware-set-5-1786288704479_LjmLy7QrD.jpg",
+        "id": "c536a2786dd2c73890be6cd6",
+        "_id": "4ef4a3a0fbbbb29a34e5d9f5"
+      }
+    ],
+    "stock": 34
+  },
+  {
+    "_id": "603611596797a19141117fba",
+    "title": "Hawkins Nonstick Pan 6",
+    "description": "Hawkins nonstick pan — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 528,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/hawkins-nonstick-pan-6-1786288707509_WgxwxbEGZ.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/hawkins-nonstick-pan-6-1786288707509_WgxwxbEGZ.jpg",
+        "id": "6df8d59e12eb5abb12036029",
+        "_id": "7b348ba84e23285350ddcb3d"
+      }
+    ],
+    "stock": 45
+  },
+  {
+    "_id": "abcddc5a99dd0877c162aba7",
+    "title": "Wonderchef Cookware Set 7",
+    "description": "Wonderchef cookware set — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1888,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/wonderchef-cookware-set-7-1786288710763_IPnwIX-q5.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/wonderchef-cookware-set-7-1786288710763_IPnwIX-q5.jpg",
+        "id": "7840fae86ac5ce31e8edc572",
+        "_id": "63c1da7dd1bab80872cde60e"
+      }
+    ],
+    "stock": 22
+  },
+  {
+    "_id": "68c8baf144f4ad833279d1a2",
+    "title": "Cello Nonstick Pan 8",
+    "description": "Cello nonstick pan — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 6557,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/cello-nonstick-pan-8-1786288713608_MtDY6Tcc1.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/cello-nonstick-pan-8-1786288713608_MtDY6Tcc1.jpg",
+        "id": "064eeae23d2103096f0fd089",
+        "_id": "bceac98c7c2b39d398309521"
+      }
+    ],
+    "stock": 26
+  },
+  {
+    "_id": "46b98bad282d7ed65c7ac9df",
+    "title": "Milton Cookware Set 9",
+    "description": "Milton cookware set — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1915,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/milton-cookware-set-9-1786288716956_m8kXev4D3.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/milton-cookware-set-9-1786288716956_m8kXev4D3.jpg",
+        "id": "6343e28c343c201feea9aa27",
+        "_id": "236a3ebaea6852e9bd614eeb"
+      }
+    ],
+    "stock": 38
+  },
+  {
+    "_id": "f9db97b378934220ba924789",
+    "title": "Pigeon Nonstick Pan 10",
+    "description": "Pigeon nonstick pan — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2508,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/pigeon-nonstick-pan-10-1786288720223_UAH2r3Cg4.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/pigeon-nonstick-pan-10-1786288720223_UAH2r3Cg4.jpg",
+        "id": "08aa5284d913a44653eab5f0",
+        "_id": "8f26df6c3899c4196dd860f5"
+      }
+    ],
+    "stock": 57
+  },
+  {
+    "_id": "cd318c3b838bdb8af77e79fb",
+    "title": "Nivea Face Cream 1",
+    "description": "Nivea face cream — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1172,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/nivea-face-cream-1-1786288723785_6adYb0Jui.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/nivea-face-cream-1-1786288723785_6adYb0Jui.jpg",
+        "id": "389f91d2b91dcec59c9c823e",
+        "_id": "926e8927e46b583cc1841b5c"
+      }
+    ],
+    "stock": 32
+  },
+  {
+    "_id": "bdac4f68f63727148143b0ca",
+    "title": "Ponds Serum 2",
+    "description": "Ponds serum — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1696,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/ponds-serum-2-1786288726808_hMyfAfd9Y.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/ponds-serum-2-1786288726808_hMyfAfd9Y.jpg",
+        "id": "9c56d452198b781672227c75",
+        "_id": "b9a6ee666b58790e725843b3"
+      }
+    ],
+    "stock": 41
+  },
+  {
+    "_id": "584ba7bccbaddf950880bf9b",
+    "title": "Lakme Face Cream 3",
+    "description": "Lakme face cream — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2068,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lakme-face-cream-3-1786288729720_0llbWK3mm.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lakme-face-cream-3-1786288729720_0llbWK3mm.jpg",
+        "id": "fa2a395231fb8ec4d5cbdfdb",
+        "_id": "b4b3c30f91bf0f6a71cf3e25"
+      }
+    ],
+    "stock": 23
+  },
+  {
+    "_id": "bc47649644403d63f0efda10",
+    "title": "Mamaearth Serum 4",
+    "description": "Mamaearth serum — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 249,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/mamaearth-serum-4-1786288732650_weNMWGZch.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/mamaearth-serum-4-1786288732650_weNMWGZch.jpg",
+        "id": "20cb1bec76e382ec82c2a035",
+        "_id": "4efbf2abbe42a7e78770ed2d"
+      }
+    ],
+    "stock": 16
+  },
+  {
+    "_id": "abf3ef1069ac1f415d2fcb44",
+    "title": "The Ordinary Face Cream 5",
+    "description": "The Ordinary face cream — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1499,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/the-ordinary-face-cream-5-1786288735592_rORPgUcRR.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/the-ordinary-face-cream-5-1786288735592_rORPgUcRR.jpg",
+        "id": "6301d3553bd465d9056461a9",
+        "_id": "89cb3d919c135764ce2c730f"
+      }
+    ],
+    "stock": 36
+  },
+  {
+    "_id": "96de6bf7bd83d7dd93fa3e35",
+    "title": "Nivea Serum 6",
+    "description": "Nivea serum — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2113,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/nivea-serum-6-1786288738554_1AHNUiZCg.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/nivea-serum-6-1786288738554_1AHNUiZCg.jpg",
+        "id": "3105c382e7f9396139efe149",
+        "_id": "bb20e3bcf4ef2b86d34fbb1f"
+      }
+    ],
+    "stock": 5
+  },
+  {
+    "_id": "04780c876c63dfb3f094bd59",
+    "title": "Ponds Face Cream 7",
+    "description": "Ponds face cream — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 695,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/ponds-face-cream-7-1786288741687_zLl4mJTZo.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/ponds-face-cream-7-1786288741687_zLl4mJTZo.jpg",
+        "id": "4fbcaacdfeaf394dfa1c4fae",
+        "_id": "9b54d6db0d4fd7e64fb9cca9"
+      }
+    ],
+    "stock": 22
+  },
+  {
+    "_id": "b30e3067961064954d9092c4",
+    "title": "Lakme Serum 8",
+    "description": "Lakme serum — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 981,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lakme-serum-8-1786288744632_sJBKdCTBb.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lakme-serum-8-1786288744632_sJBKdCTBb.jpg",
+        "id": "74a7932a52b6280100f66b35",
+        "_id": "136cc9a3693647f720dd61ea"
+      }
+    ],
+    "stock": 31
+  },
+  {
+    "_id": "1d376061507c3783d63f81bf",
+    "title": "Mamaearth Face Cream 9",
+    "description": "Mamaearth face cream — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2152,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/mamaearth-face-cream-9-1786288747279_86y398HzI.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/mamaearth-face-cream-9-1786288747279_86y398HzI.jpg",
+        "id": "608c474ab96a65bcd9b3c5bf",
+        "_id": "141aeb12d2aea66fbde0837d"
+      }
+    ],
+    "stock": 27
+  },
+  {
+    "_id": "f490f3b013e983b50f2a4cfc",
+    "title": "The Ordinary Serum 10",
+    "description": "The Ordinary serum — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1375,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/the-ordinary-serum-10-1786288750121_5a9GnXW9g.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/the-ordinary-serum-10-1786288750121_5a9GnXW9g.jpg",
+        "id": "11c74d80009570df17ffae79",
+        "_id": "6b8f2c616b4ffbdccf018585"
+      }
+    ],
+    "stock": 34
+  },
+  {
+    "_id": "609b592bf897823d11a9d5f5",
+    "title": "Maybelline Lipstick 1",
+    "description": "Maybelline lipstick — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1775,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/maybelline-lipstick-1-1786288752890_-zBxH8DOS.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/maybelline-lipstick-1-1786288752890_-zBxH8DOS.jpg",
+        "id": "f8781c5aa86374bf86402eb5",
+        "_id": "7fc4a75fd24ce08c45230c07"
+      }
+    ],
+    "stock": 38
+  },
+  {
+    "_id": "ae5995b9e100f76304e15b75",
+    "title": "Lakme Foundation 2",
+    "description": "Lakme foundation — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 351,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lakme-foundation-2-1786288755810_j8OtQ0f9x.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lakme-foundation-2-1786288755810_j8OtQ0f9x.jpg",
+        "id": "e7a2f8fe57feecd12cf330f0",
+        "_id": "af0d556d9b1444d91d484a21"
+      }
+    ],
+    "stock": 30
+  },
+  {
+    "_id": "b03c71fbe50960e525049002",
+    "title": "Sugar Lipstick 3",
+    "description": "Sugar lipstick — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1998,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/sugar-lipstick-3-1786288758986_eMDokTTNz.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/sugar-lipstick-3-1786288758986_eMDokTTNz.jpg",
+        "id": "f85dd82d8c7fda8ce46571e1",
+        "_id": "1ad209a84bf776e867631bc7"
+      }
+    ],
+    "stock": 45
+  },
+  {
+    "_id": "84129cd3c1914b81073eadf6",
+    "title": "Nykaa Foundation 4",
+    "description": "Nykaa foundation — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 446,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/nykaa-foundation-4-1786288762061_KBMWfZvBc.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/nykaa-foundation-4-1786288762061_KBMWfZvBc.jpg",
+        "id": "b8cd6ff783240c5302fff2f7",
+        "_id": "c5c205895a26dbc9508c8c48"
+      }
+    ],
+    "stock": 42
+  },
+  {
+    "_id": "88cefca778292d9df26d280f",
+    "title": "MAC Lipstick 5",
+    "description": "MAC lipstick — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 291,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/mac-lipstick-5-1786288765305_Sk7nDjAW5h.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/mac-lipstick-5-1786288765305_Sk7nDjAW5h.jpg",
+        "id": "12d5217f81763f096b5f04bc",
+        "_id": "e34f22c8a0467f4166534fcd"
+      }
+    ],
+    "stock": 35
+  },
+  {
+    "_id": "d81d87ad6cffe148615e57d3",
+    "title": "Maybelline Foundation 6",
+    "description": "Maybelline foundation — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1668,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/maybelline-foundation-6-1786288768478_0ZCZU1yah.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/maybelline-foundation-6-1786288768478_0ZCZU1yah.jpg",
+        "id": "c6de3152e3bcb87bcb7b93e9",
+        "_id": "02f420665338dcfe996132ce"
+      }
+    ],
+    "stock": 60
+  },
+  {
+    "_id": "f3b5d6cb681428b41635d4e5",
+    "title": "Lakme Lipstick 7",
+    "description": "Lakme lipstick — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 455,
+      "currency": "INR"
+    },
+    "seller": "6a2e39978e22d90ffeef9074",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lakme-lipstick-7-1786288772032_3xcHX4u7X.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lakme-lipstick-7-1786288772032_3xcHX4u7X.jpg",
+        "id": "45441060fbe2838a0e9a2eb9",
+        "_id": "cd31dc29bf5884ffdc8f070d"
+      }
+    ],
+    "stock": 23
+  },
+  {
+    "_id": "6df91e6b34da75439f0d6be5",
+    "title": "Sugar Foundation 8",
+    "description": "Sugar foundation — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 981,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/sugar-foundation-8-1786288775570_Z6bHrutv8.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/sugar-foundation-8-1786288775570_Z6bHrutv8.jpg",
+        "id": "2594b2a96f992b479271f9b4",
+        "_id": "c3e6d67984751ac658927fa2"
+      }
+    ],
+    "stock": 52
+  },
+  {
+    "_id": "2ed5823d4f1d914f8c8452c8",
+    "title": "Nykaa Lipstick 9",
+    "description": "Nykaa lipstick — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 546,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/nykaa-lipstick-9-1786288778847_9OCZffUzp.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/nykaa-lipstick-9-1786288778847_9OCZffUzp.jpg",
+        "id": "a0230d35a36dd7ddc74cdc8e",
+        "_id": "c942cb5e59831d6b98f3527c"
+      }
+    ],
+    "stock": 14
+  },
+  {
+    "_id": "7497e0ffc60f376eec96577f",
+    "title": "MAC Foundation 10",
+    "description": "MAC foundation — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1917,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/mac-foundation-10-1786288782146_59FaPwps9.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/mac-foundation-10-1786288782146_59FaPwps9.jpg",
+        "id": "d822b591f9865eedb65d0e9b",
+        "_id": "7f5a91068855e74cda3ea940"
+      }
+    ],
+    "stock": 56
+  },
+  {
+    "_id": "1094779067c5b3402aac4684",
+    "title": "Funskool Toy Set 1",
+    "description": "Funskool toy set — variant 1. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2809,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/funskool-toy-set-1-1786288797438_1GDkELi3P.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/funskool-toy-set-1-1786288797438_1GDkELi3P.jpg",
+        "id": "db1209af2e1c28b9175002b7",
+        "_id": "25d044f50e418e0eea6c2cf0"
+      }
+    ],
+    "stock": 2
+  },
+  {
+    "_id": "481850fba130da2ff1f9f599",
+    "title": "Hot Wheels Building Blocks 2",
+    "description": "Hot Wheels building blocks — variant 2. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2747,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/hot-wheels-building-blocks-2-1786288801341_WR1ano5Xi.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/hot-wheels-building-blocks-2-1786288801341_WR1ano5Xi.jpg",
+        "id": "71c1865d210c2ecee2760c6d",
+        "_id": "e64dce28d69a3b5be8a6f04e"
+      }
+    ],
+    "stock": 53
+  },
+  {
+    "_id": "8b39c206096c3ba88f269a92",
+    "title": "Lego Toy Set 3",
+    "description": "Lego toy set — variant 3. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1969,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lego-toy-set-3-1786288804691_w14B-bR58.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lego-toy-set-3-1786288804691_w14B-bR58.jpg",
+        "id": "bdb800f15b90f6353c07257e",
+        "_id": "0fefe11a0362da3981b89c3f"
+      }
+    ],
+    "stock": 40
+  },
+  {
+    "_id": "979252f695aee8b8826e08f0",
+    "title": "Fisher-Price Building Blocks 4",
+    "description": "Fisher-Price building blocks — variant 4. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2494,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/fisher-price-building-blocks-4-1786288808021_f5ue29kPiX.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/fisher-price-building-blocks-4-1786288808021_f5ue29kPiX.jpg",
+        "id": "ec96efc1a40e5fbc343e1170",
+        "_id": "bd3029017864382f6024c098"
+      }
+    ],
+    "stock": 6
+  },
+  {
+    "_id": "61e02c7fbffed6277ddad109",
+    "title": "Hamleys Toy Set 5",
+    "description": "Hamleys toy set — variant 5. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2433,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/hamleys-toy-set-5-1786288811383_6d-ZCxGMp.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/hamleys-toy-set-5-1786288811383_6d-ZCxGMp.jpg",
+        "id": "4f9fee84c9e33750474513df",
+        "_id": "81f27c7ac84febed1a43ff99"
+      }
+    ],
+    "stock": 4
+  },
+  {
+    "_id": "3357b379bdfd5d0bd59cb626",
+    "title": "Funskool Building Blocks 6",
+    "description": "Funskool building blocks — variant 6. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2514,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/funskool-building-blocks-6-1786288814349_UhbBIb1ZK.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/funskool-building-blocks-6-1786288814349_UhbBIb1ZK.jpg",
+        "id": "aae7564ac97155ceb89fc037",
+        "_id": "18c06ffb847ae0f599298d4e"
+      }
+    ],
+    "stock": 9
+  },
+  {
+    "_id": "90b7a0827ffdf506cb2bb8bd",
+    "title": "Hot Wheels Toy Set 7",
+    "description": "Hot Wheels toy set — variant 7. Quality checked, ready to ship.",
+    "price": {
+      "amount": 1995,
+      "currency": "INR"
+    },
+    "seller": "be79955b43fd414a4c86b27d",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/hot-wheels-toy-set-7-1786288817472_JJhXsw-xm.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/hot-wheels-toy-set-7-1786288817472_JJhXsw-xm.jpg",
+        "id": "4e4b88d34cb04458813c14d4",
+        "_id": "02a4a1e146158d79440572c0"
+      }
+    ],
+    "stock": 17
+  },
+  {
+    "_id": "042bce028148c3c69b38e5b5",
+    "title": "Lego Building Blocks 8",
+    "description": "Lego building blocks — variant 8. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3591,
+      "currency": "INR"
+    },
+    "seller": "99ed3d03cf300852830a2d37",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/lego-building-blocks-8-1786288820649_ZdRT-EclS.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/lego-building-blocks-8-1786288820649_ZdRT-EclS.jpg",
+        "id": "d176e151e98bc007155b58f7",
+        "_id": "4020da15924cf64767064ed9"
+      }
+    ],
+    "stock": 2
+  },
+  {
+    "_id": "80415082d411328bdf360459",
+    "title": "Fisher-Price Toy Set 9",
+    "description": "Fisher-Price toy set — variant 9. Quality checked, ready to ship.",
+    "price": {
+      "amount": 3707,
+      "currency": "INR"
+    },
+    "seller": "e5847dfa568bab0987a94edb",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/fisher-price-toy-set-9-1786288823547_8Rpn7ruEv.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/fisher-price-toy-set-9-1786288823547_8Rpn7ruEv.jpg",
+        "id": "1a1f30d4a4d8f5ff55f2f576",
+        "_id": "80317d651a065e7d3ce51784"
+      }
+    ],
+    "stock": 31
+  },
+  {
+    "_id": "f835984160ea77bb24ab469f",
+    "title": "Hamleys Building Blocks 10",
+    "description": "Hamleys building blocks — variant 10. Quality checked, ready to ship.",
+    "price": {
+      "amount": 2197,
+      "currency": "INR"
+    },
+    "seller": "561e7e7f72779fcada3931f8",
+    "images": [
+      {
+        "url": "https://ik.imagekit.io/sagar237/buykaro/hamleys-building-blocks-10-1786288826690_3IfjpF289.jpg",
+        "thumbnail": "https://ik.imagekit.io/sagar237/tr:n-ik_ml_thumbnail/buykaro/hamleys-building-blocks-10-1786288826690_3IfjpF289.jpg",
+        "id": "b882bbb3e64976dee5ce3a6b",
+        "_id": "dda802930d40d40024f54e05"
+      }
+    ],
+    "stock": 59
+  }
+]

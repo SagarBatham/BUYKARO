@@ -2,11 +2,22 @@ const jwt = require("jsonwebtoken")
 
 function createAuthMiddleware(role = ["user"]) {
     return function authMiddlewareCart(req, res, next) {
-        const token  = req.cookies.token || req.headers?.authorization?.split(' ')[1];
+        let token = req.cookies.token;
+        const authHeader = req.headers?.authorization;
+
+        console.log('Cart auth middleware request:', {
+            authorizationHeader: authHeader ? authHeader.slice(0, 20) : null,
+            hasCookieToken: Boolean(req.cookies.token),
+        });
+
+        if (!token && authHeader) {
+            const parts = authHeader.split(' ');
+            token = parts.length === 2 ? parts[1] : authHeader;
+        }
 
         if(!token){
             return res.status(401).json({
-                message:"Unauthorized:No Token Provided"
+                message:"Unauthorized: No Token Provided"
             })
         }
         
@@ -23,8 +34,9 @@ function createAuthMiddleware(role = ["user"]) {
 
             next()
         } catch (error) {
-            return res.status(404).json({
-                Error:error.message
+            console.error('Cart auth token invalid:', error.message);
+            return res.status(401).json({
+                message: error.message
             })
         }
 

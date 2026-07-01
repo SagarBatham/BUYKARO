@@ -10,6 +10,7 @@ router.post('/register',validators.registerUserValidation,authController.registe
 router.post('/login', validators.loginValidation, authController.loginUser)
 
 router.get("/me",authMiddleWare.authMiddleware,authController.getCurrentUser)
+router.patch("/me",authMiddleWare.authMiddleware,authController.updateCurrentUser)
 
 router.get("/logout",authController.logoutUser)
 
@@ -20,5 +21,7 @@ router.post('/users/me/addresses', authMiddleWare.authMiddleware, validators.add
 router.post('/users/me/addresses/:addressId/default', authMiddleWare.authMiddleware, authController.markAddressDefault)
 
 router.delete('/users/me/addresses/:addressId', authMiddleWare.authMiddleware, authController.deleteAddress)
+
+router.post('/logout', authController.logoutUser)
 
 module.exports = router

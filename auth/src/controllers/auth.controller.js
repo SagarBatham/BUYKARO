@@ -6,8 +6,17 @@ const redis = require("../db/redis")
 const { publishToQueue } = require("../broker/broker")
 
 async function registerUser(req, res) {
-    const { username, email, password, fullName: {
+    const { username: incomingUsername, email, password, fullName: {
         firstName, lastName},role } = req.body
+
+    const emailLocalPart = (email || '').split('@')[0] || ''
+    const derivedUsername = (incomingUsername || emailLocalPart || `${firstName || 'user'}`)
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9._-]/g, '')
+        .slice(0, 20)
+
+    const username = derivedUsername || `user${Date.now()}`
 
     const isUserAlreadyExists = await userModel.findOne({
         $or: [
@@ -33,7 +42,7 @@ async function registerUser(req, res) {
     })
     
 
-    await Promise.all([
+    await Promise.allSettled([
         publishToQueue("AUTH_NOTIFICATION.USER_CREATED",{
         id:user.id,
         username:user.username,
@@ -51,11 +60,15 @@ async function registerUser(req, res) {
         role: user.role
     }, process.env.JWT_SECRET, { expiresIn: "1d" })
 
-    res.cookie("token", token, {
+    const cookieOptions = {
         httpOnly: true,
-        secure: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'none',
+        path: '/',
         maxAge: 24 * 60 * 60 * 1000
-    })
+    }
+
+    res.cookie("token", token, cookieOptions)
 
     res.status(201).json({
         message: "User Registered Succesfully",
@@ -94,14 +107,19 @@ async function loginUser(req, res) {
         role: user.role
     }, process.env.JWT_SECRET, { expiresIn: '1d' })
 
-    res.cookie('token', token, {
+    const cookieOptions = {
         httpOnly: true,
-        secure: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'none',
+        path: '/',
         maxAge: 24 * 60 * 60 * 1000
-    })
+    }
+
+    res.cookie('token', token, cookieOptions)
 
     res.status(200).json({
         message: 'Login successful',
+        token,
         user: {
             id: user._id,
             username: user.username,
@@ -120,9 +138,51 @@ async function getCurrentUser(req, res) {
     })
 }
 
+async function updateCurrentUser(req, res) {
+    try {
+        const id = req.user.id;
+        const { email, fullName } = req.body;
+
+        const user = await userModel.findById(id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        if (email && email !== user.email) {
+            const existing = await userModel.findOne({ email, _id: { $ne: id } });
+            if (existing) {
+                return res.status(409).json({ message: 'Email is already in use' });
+            }
+            user.email = email;
+        }
+
+        if (fullName?.firstName) user.fullName.firstName = fullName.firstName;
+        if (fullName?.lastName) user.fullName.lastName = fullName.lastName;
+
+        await user.save();
+
+        return res.status(200).json({
+            message: 'Profile updated successfully',
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                fullName: user.fullName,
+                role: user.role,
+                addresses: user.addresses,
+            }
+        });
+    } catch (err) {
+        console.error('updateCurrentUser error', err);
+        return res.status(500).json({ message: 'Failed to update profile' });
+    }
+}
+
 async function logoutUser(req, res) {
     try {
-        const token = req.cookies && req.cookies.token
+        const authHeader = req.headers?.authorization;
+        const tokenFromHeader = authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() : authHeader?.trim();
+        const token = req.cookies?.token || tokenFromHeader;
 
         if (token) {
             await redis.set(`blacklist:${token}`, 'true', 'EX', 24 * 60 * 60)
@@ -130,7 +190,9 @@ async function logoutUser(req, res) {
 
         res.clearCookie('token', {
             httpOnly: true,
-            secure: true
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'none',
+            path: '/',
         })
 
         return res.status(200).json({ message: 'Logged out successfully' })
@@ -147,7 +209,7 @@ async function getUserAdresses(req, res) {
         if (!user) return res.status(404).json({ message: 'User not Found' })
         return res.status(200).json({
             message: 'User addresses fetched successfully',
-            addresses: user.addresses
+            data: user.addresses
         })
     } catch (err) {
         console.error(err)
@@ -158,9 +220,9 @@ async function getUserAdresses(req, res) {
 async function addUserAdresses(req, res) {
     try {
         const id = req.user.id
-        const { street, city, state, zip, pincode, country, phone, isDefault } = req.body
+        const { street, city, state, zip, zipCode, pincode, country, phone, isDefault } = req.body
 
-        const zipVal = zip || pincode
+        const zipVal = zip || zipCode || pincode
 
         const user = await userModel.findById(id)
         if (!user) return res.status(404).json({
@@ -176,7 +238,7 @@ async function addUserAdresses(req, res) {
         await user.save()
 
         const saved = user.addresses[user.addresses.length - 1]
-        return res.status(201).json({ message: 'Address added Successfully', address: saved })
+        return res.status(201).json({ message: 'Address added Successfully', data: saved })
     } catch (err) {
         console.error(err)
         return res.status(500).json({ message: 'Failed to add address' })
@@ -230,6 +292,7 @@ module.exports = {
     registerUser,
     loginUser,
     getCurrentUser,
+    updateCurrentUser,
     logoutUser,
     getUserAdresses,
     addUserAdresses,

@@ -1,5 +1,9 @@
 const jwt=require("jsonwebtoken")
 
+function getJwtSecret() {
+    return process.env.JWT_SECRET || process.env.AUTH_JWT_SECRET || process.env.SHARED_JWT_SECRET || ''
+}
+
 function createAuthMiddleware(roles=["user"]){
     // In test environment, inject a dummy user to avoid needing real JWTs
     if (process.env.NODE_ENV === 'test') {
@@ -10,7 +14,8 @@ function createAuthMiddleware(roles=["user"]){
     }
 
     return function authMiddleware(req,res,next){
-        const token=req.cookies?.token || req.headers?.authorization?.split('')[1]
+        const authHeader = req.headers?.authorization;
+        const token = req.cookies?.token || (authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() : authHeader?.trim())
 
         if(!token){
             return res.status(401).json({
@@ -19,7 +24,7 @@ function createAuthMiddleware(roles=["user"]){
         }
 
         try {
-            const decoded=jwt.verify(token,process.env.JWT_SECRET)
+            const decoded=jwt.verify(token, getJwtSecret())
 
             if(!roles.includes(decoded.role)){
                 return res.status(403).json({

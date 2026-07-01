@@ -25,7 +25,7 @@ async function createProduct(req, res) {
       images
     })
 
-    await publishToQueue0("PRODUCT_SELLER_DASHBOARD.PRODUCT_CREATED",product)
+    await publishToQueue("PRODUCT_SELLER_DASHBOARD.PRODUCT_CREATED", product)
 
     res.status(201).json(product)
   } catch (error) {

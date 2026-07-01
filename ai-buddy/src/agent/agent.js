@@ -1,3 +1,9 @@
+const nodeCrypto = require("crypto");
+
+if (typeof globalThis.crypto === "undefined") {
+    globalThis.crypto = nodeCrypto.webcrypto || nodeCrypto;
+}
+
 const {
     StateGraph,
     MessagesAnnotation,
@@ -17,11 +23,13 @@ const {
 const tools = require("./tool");
 // Do not log API keys in production or shared logs
 
-const model = new ChatGoogleGenerativeAI({
-    model: "gemini-2.5-flash",
-    apiKey: process.env.GOOGLE_API_KEY,
-    temperature: 0.5
-});
+const model = process.env.GOOGLE_API_KEY
+    ? new ChatGoogleGenerativeAI({
+        model: "gemini-3.6-flash",
+        apiKey: process.env.GOOGLE_API_KEY,
+        temperature: 0.5
+    })
+    : null;
 
 const graph = new StateGraph(MessagesAnnotation)
 
@@ -82,6 +90,15 @@ Rules:
 3. Never ask for confirmation.
 4. Always use the first matching product.
 `;
+
+    if (!model) {
+        state.messages.push(
+            new AIMessage({
+                content: "AI Buddy is temporarily unavailable because the Google AI credentials are not configured."
+            })
+        );
+        return state;
+    }
 
     const response = await model.invoke(
         [

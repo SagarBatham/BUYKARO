@@ -2,11 +2,10 @@ const jwt = require("jsonwebtoken")
 
 function createAuthMiddleware(role = ["user", "seller"]) {
     return function authMiddlewareCart(req, res, next) {
+        const authHeader = req.headers?.authorization;
+        const token = req.cookies?.token || (authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() : authHeader?.trim());
 
-        const token =
-            req.cookies?.token ||
-            req.headers?.authorization?.split(" ")[1];
-
+        console.log("Auth Header:", authHeader);
         console.log("Token:", token);
         console.log("Type:", typeof token);
 

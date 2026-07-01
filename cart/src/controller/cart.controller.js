@@ -12,6 +12,7 @@ const inMemoryCart = { items: [] };
 
 async function getCart(req, res) {
     const user = req.user;
+    console.log('getCart request:', { userId: user?.id });
 
     if (!user) {
         return res.status(200).json({ items: inMemoryCart.items });
@@ -20,17 +21,26 @@ async function getCart(req, res) {
     let cart = await cartModel.findOne({ user: user.id });
 
     if (!cart) {
+        console.log('getCart: no cart found for user', user.id);
         return res.status(200).json({ items: [] });
     }
 
-    return res.status(200).json({ message:"Cart Fetched Succesfully",
-        cart
-     });
+    console.log('getCart: returning cart', { userId: user.id, itemCount: cart.items.length });
+    return res.status(200).json({ message: "Cart Fetched Successfully", cart, items: cart.items });
 }
 
 async function addItemtoCart(req, res) {
     const { productId } = req.body;
     const quantity = normalizeQty(req.body);
+    const user = req.user;
+
+    console.log('addItemtoCart request:', {
+        userId: user?.id,
+        productId,
+        quantity,
+        hasAuthHeader: Boolean(req.headers?.authorization),
+        body: req.body,
+    });
 
     if (!productId || typeof quantity !== "number") {
         return res
@@ -61,6 +71,7 @@ async function addItemtoCart(req, res) {
             });
         }
 
+        console.log('addItemtoCart: in-memory cart updated', inMemoryCart.items);
         return res.status(201).json({
             productId,
             qty: quantity,
@@ -91,6 +102,7 @@ async function addItemtoCart(req, res) {
 
     await cart.save();
 
+    console.log('addItemtoCart: saved cart', { userId: user.id, itemCount: cart.items.length });
     return res.status(201).json({
         message: "Added to Cart",
         cart,
@@ -100,6 +112,9 @@ async function addItemtoCart(req, res) {
 async function updateItemQty(req, res) {
     const { productId } = req.params;
     const qty = normalizeQty(req.body);
+    const user = req.user;
+
+    console.log('updateItemQty request:', { userId: user?.id, productId, qty, body: req.body });
 
     if (typeof qty !== "number") {
         return res.status(400).json({
@@ -151,6 +166,7 @@ async function updateItemQty(req, res) {
     item.quantity = qty;
 
     await cart.save();
+    console.log('updateItemQty: saved cart item', { userId: user.id, productId, qty });
 
     return res.status(200).json({
         productId,
@@ -161,6 +177,7 @@ async function updateItemQty(req, res) {
 async function deleteItem(req, res) {
     const { productId } = req.params;
     const user = req.user;
+    console.log('deleteItem request:', { userId: user?.id, productId });
 
     if (!user) {
         const idx = inMemoryCart.items.findIndex(
@@ -205,6 +222,7 @@ async function deleteItem(req, res) {
 
 async function clearCart(req, res) {
     const user = req.user;
+    console.log('clearCart request:', { userId: user?.id });
 
     if (!user) {
         inMemoryCart.items = [];

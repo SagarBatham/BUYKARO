@@ -1,6 +1,7 @@
-const app=require('./src/app')
+const app = require('./src/app')
 
-app.listen(3002,()=>{
-    console.log("Cart Server running on Port 3002");
-    
+const port = process.env.PORT || 3002
+
+app.listen(port, () => {
+    console.log(`Cart Server running on port ${port}`)
 })

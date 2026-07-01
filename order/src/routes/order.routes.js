@@ -24,6 +24,12 @@ router.get(
     controllers.getOrderbyId
 );
 
+router.patch(
+    "/:id/confirm",
+    createAuthMiddleware(["user"]),
+    controllers.confirmOrder
+);
+
 router.post(
     "/:id/cancel",
     createAuthMiddleware(["user"]),
