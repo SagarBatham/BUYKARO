@@ -176,7 +176,7 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/10 bg-slate-900/95 px-3 py-3 shadow-inner sm:flex-row sm:items-center sm:px-4">
+        <div className="flex flex-col gap-3 border-t border-white/10 bg-slate-900/95 px-3 py-3.5 shadow-inner sm:flex-row sm:items-center sm:px-4">
           <input
             type="text"
             value={input}
@@ -184,14 +184,14 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
             placeholder="Ask about brands, sizes, or products..."
-            className="h-11 min-w-0 flex-1 rounded-full border border-white/10 bg-slate-900 px-4 text-sm text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50"
+            className="h-12 min-w-0 flex-1 rounded-2xl border border-white/10 bg-slate-900 px-4 text-base text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50 sm:h-11 sm:text-sm"
             disabled={loading}
           />
           <button
             type="button"
             onClick={sendMessage}
             disabled={loading || !input.trim()}
-            className="inline-flex h-11 min-h-[2.75rem] items-center justify-center gap-2 rounded-full bg-violet-600 px-4 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex h-12 min-h-[3rem] w-full items-center justify-center gap-2 rounded-2xl bg-violet-600 px-4 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-[110px]"
           >
             <Send size={18} />
             <span className="whitespace-nowrap">Send</span>
