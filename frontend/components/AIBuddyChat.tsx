@@ -184,14 +184,14 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
             placeholder="Ask about brands, sizes, or products..."
-            className="h-12 min-w-0 flex-1 rounded-2xl border border-white/10 bg-slate-900 px-4 text-base text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50 sm:h-11 sm:text-sm"
+            className="h-14 min-w-0 w-full flex-1 rounded-2xl border border-white/10 bg-slate-900 px-4 text-base text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50 sm:h-11 sm:w-auto sm:text-sm"
             disabled={loading}
           />
           <button
             type="button"
             onClick={sendMessage}
             disabled={loading || !input.trim()}
-            className="inline-flex h-12 min-h-[3rem] w-full items-center justify-center gap-2 rounded-2xl bg-violet-600 px-4 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-[110px]"
+            className="inline-flex h-14 min-h-[3.5rem] w-full items-center justify-center gap-2 rounded-2xl bg-violet-600 px-4 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60 sm:h-11 sm:w-auto sm:min-w-[110px]"
           >
             <Send size={18} />
             <span className="whitespace-nowrap">Send</span>
