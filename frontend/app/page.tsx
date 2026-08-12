@@ -35,15 +35,15 @@ export default function Home() {
             <h1 className="max-w-3xl text-balance text-4xl font-semibold leading-[0.95] tracking-[-0.04em] text-white sm:text-5xl lg:text-7xl mobile-tight">
               Discover the sharpest way to buy online.
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
+            <p className="max-w-2xl mt-4 text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
               BuyKaro brings together a refined storefront, dependable delivery, and calm product discovery in a design that feels unmistakably premium.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link href="/products" className="inline-flex items-center justify-center gap-2 rounded-full bg-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 sm:px-6">
+            <div className="flex flex-col gap-3 mt-7 sm:flex-row sm:flex-wrap">
+              <Link href="/products" className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white transition rounded-full shadow-lg bg-violet-600 shadow-violet-500/20 hover:bg-violet-500 sm:px-6">
                 Start Shopping
                 <ArrowRight size={18} />
               </Link>
-              <Link href="/ai-buddy" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10 sm:px-6">
+              <Link href="/ai-buddy" className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white transition border rounded-full border-white/15 bg-white/5 hover:bg-white/10 sm:px-6">
                 Try AI Buddy
               </Link>
             </div>
@@ -55,7 +55,7 @@ export default function Home() {
                 <Globe2 size={16} />
                 Built for modern buyers
               </div>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 mt-5 sm:grid-cols-2">
                 {stats.map((stat) => (
                   <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
                     <p className="text-xl font-semibold text-white sm:text-2xl">{stat.value}</p>
@@ -76,8 +76,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-14 border-t border-white/10 pt-12">
-        <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <section className="pt-12 border-t mt-14 border-white/10">
+        <div className="flex flex-col gap-3 mb-8 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Why BuyKaro</p>
             <h2 className="text-3xl font-semibold text-white">A quieter kind of excellence.</h2>
@@ -96,11 +96,11 @@ export default function Home() {
       </section>
 
       <section className="mt-14 rounded-[28px] border border-white/10 bg-[#060606] p-6 shadow-sm sm:p-8">
-        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-4 mb-8 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Featured</p>
             <h2 className="text-3xl font-semibold text-white">Popular products</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-400">Browse a curated selection of items chosen for quality, simplicity, and everyday value.</p>
+            <p className="max-w-2xl mt-2 text-sm leading-6 text-gray-400">Browse a curated selection of items chosen for quality, simplicity, and everyday value.</p>
           </div>
           <Link href="/products" className="inline-flex items-center gap-2 text-sm font-semibold text-white">
             View all products
@@ -114,8 +114,8 @@ export default function Home() {
 
       <section className="mt-14 rounded-[28px] border border-white/10 bg-[#050505] px-6 py-10 text-center sm:px-10">
         <h2 className="text-3xl font-semibold text-white">Ready for a cleaner way to shop?</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-gray-400">Explore your next purchase with a crisp interface, dependable support, and a premium feel from start to finish.</p>
-        <Link href="/products" className="mt-6 inline-flex items-center gap-2 rounded-full bg-violet-600 px-6 py-3 font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500">
+        <p className="max-w-2xl mx-auto mt-3 text-sm leading-7 text-gray-400">Explore your next purchase with a crisp interface, dependable support, and a premium feel from start to finish.</p>
+        <Link href="/products" className="inline-flex items-center gap-2 px-6 py-3 mt-6 font-semibold text-white transition rounded-full shadow-lg bg-violet-600 shadow-violet-500/20 hover:bg-violet-500">
           Browse Now
           <ArrowRight size={16} />
         </Link>
