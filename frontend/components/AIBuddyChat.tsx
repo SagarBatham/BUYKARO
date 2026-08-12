@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useAuthStore } from '@/store';
 import { io, Socket } from 'socket.io-client';
 import { Send, MessageCircle } from 'lucide-react';
@@ -9,8 +9,13 @@ interface Message {
   role: 'user' | 'assistant';
   content: string;
 }
+interface AIBuddyChatProps {
+  compact?: boolean; // smaller height when true
+  userBg?: string; // custom background color for user bubble (CSS color)
+  assistantBg?: string; // custom background color for assistant bubble (CSS color)
+}
 
-export function AIBuddyChat() {
+export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChatProps) {
   const { user, token } = useAuthStore();
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -19,18 +24,16 @@ export function AIBuddyChat() {
     },
   ]);
   const [input, setInput] = useState('');
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const [loading, setLoading] = useState(false);
   const [socket, setSocket] = useState<Socket | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!user) return;
 
-    const socketUrl = process.env.NEXT_PUBLIC_SOCKET_URL ||
-      (typeof window !== 'undefined'
-        ? `${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${window.location.host}`
-        : 'http://localhost:3005');
-    const socketPathRaw = process.env.NEXT_PUBLIC_SOCKET_PATH || '/api/socket/socket.io';
-    const socketPath = socketPathRaw.replace(/\/+$|\/$/, '');
+    const socketUrl = process.env.NEXT_PUBLIC_AI_BUDDY_SERVICE || 'http://localhost:3005';
+    const socketPath = '/api/socket/socket.io';
 
     const newSocket = io(socketUrl, {
       path: socketPath,
@@ -77,86 +80,127 @@ export function AIBuddyChat() {
     };
   }, [user, token]);
 
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages, loading]);
+
   const sendMessage = () => {
-    if (!input.trim() || !socket) return;
+    if (!input.trim()) return;
 
     const userMessage: Message = {
       role: 'user',
       content: input,
     };
 
+    // Always show the user's message locally even if socket isn't connected
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
-    setLoading(true);
+    inputRef.current?.focus();
 
-    socket.emit('message', input);
+    if (socket) {
+      setLoading(true);
+      socket.emit('message', input);
+    }
   };
 
   if (!user) {
     return (
       <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-10 text-center shadow-sm">
         <p className="mb-4 text-sm text-slate-400">Please login to use AI Buddy</p>
+        <p className="text-sm text-slate-500">Once you’re signed in, the assistant can search products and add items to your cart.</p>
       </div>
     );
   }
 
+  // Increase inner chat size to make messages more visible
+  const containerHeightClass = compact ? 'h-[460px] max-h-[70vh]' : 'h-[600px] max-h-[85vh]';
+  const containerClass = `flex ${containerHeightClass} w-full max-w-xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950/90 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)]`;
+  // More right padding so scrollbar doesn't overlap right-aligned bubbles
+  const contentClass = `h-full min-h-0 overflow-y-auto pr-8 rounded-lg p-4 bg-slate-900/90`;
+
   return (
-    <div className="flex h-[440px] max-h-[70vh] w-full max-w-xl flex-col overflow-hidden rounded-[24px] border border-white/10 bg-slate-900/80 shadow-[0_16px_50px_-24px_rgba(15,23,42,0.9)]">
-      <div className="flex items-center gap-2 bg-gradient-to-r from-primary to-secondary px-3 py-2.5 text-white">
-        <MessageCircle size={18} />
-        <h2 className="text-base font-semibold">AI Shopping Assistant</h2>
-      </div>
+    <div className="flex justify-center">
+      <div className={containerClass}>
+        <div className="flex items-center gap-3 px-4 py-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-800 text-white">
+            <MessageCircle size={20} />
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-white">AI Buddy</p>
+            <h2 className="text-lg font-semibold text-white">Smart shopping</h2>
+          </div>
+        </div>
 
-      <div className="flex-1 overflow-y-auto space-y-3 p-3">
-        {messages.map((message, idx) => (
-          <div
-            key={idx}
-            className={`flex ${
-              message.role === 'user' ? 'justify-end' : 'justify-start'
-            }`}
+        <div className="flex-1 min-h-0 overflow-hidden p-3 sm:p-4">
+          <div className={contentClass}>
+            <div className="space-y-3">
+              {messages.map((message, idx) => {
+                const isUser = message.role === 'user';
+                const alignClass = isUser ? 'justify-end' : 'justify-start';
+
+                // If a custom background color is provided, apply it via inline style
+                const customStyle = isUser
+                  ? userBg
+                    ? { background: userBg }
+                    : undefined
+                  : assistantBg
+                  ? { background: assistantBg }
+                  : undefined;
+
+                // Use a solid, high-contrast style for user bubbles so sent messages are always visible
+                const baseBubble = isUser
+                  ? (userBg ? 'text-white' : 'bg-slate-700 text-white border border-white/20 shadow-md')
+                  : (assistantBg ? 'text-white' : 'bg-slate-800/95 text-white border border-white/10');
+
+                const bubbleClass = `relative z-40 max-w-[80%] min-w-[160px] min-h-[48px] rounded-lg px-4 py-3 text-base leading-6 break-words whitespace-pre-wrap ${baseBubble}`;
+
+                return (
+                  <div key={idx} className={`flex ${alignClass}`}>
+                    <div className={bubbleClass} style={customStyle}>
+                      {message.content}
+                    </div>
+                  </div>
+                );
+              })}
+
+              {loading && (
+                <div className="flex justify-start">
+                  <div className="rounded-[20px] border border-white/10 bg-slate-900/95 px-3 py-2">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2 w-2 animate-pulse rounded-full bg-slate-300"></span>
+                      <span className="h-2 w-2 animate-pulse rounded-full bg-slate-300"></span>
+                      <span className="h-2 w-2 animate-pulse rounded-full bg-slate-300"></span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div ref={messagesEndRef} />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-3 border-t border-white/10 bg-slate-900/95 px-4 py-3 shadow-inner sm:flex-row sm:items-center">
+          <input
+            type="text"
+            value={input}
+            ref={inputRef}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+            placeholder="Ask about brands, sizes, or product recommendations..."
+            className="flex-1 min-w-0 h-12 rounded-full border border-white/10 bg-slate-900 px-4 text-sm text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50"
+            disabled={loading}
+          />
+          <button
+            type="button"
+            onClick={sendMessage}
+            disabled={loading || !input.trim()}
+            className="inline-flex h-12 min-h-[3rem] min-w-[7rem] items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-slate-950 shadow-sm shadow-black/10 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            <div
-              className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm leading-5 ${
-                message.role === 'user'
-                  ? 'rounded-br-none bg-primary text-white'
-                  : 'rounded-bl-none border border-white/10 bg-slate-800 text-slate-200'
-              }`}
-            >
-              {message.content}
-            </div>
-          </div>
-        ))}
-        {loading && (
-          <div className="flex justify-start">
-            <div className="rounded-2xl border border-white/10 bg-slate-800 px-4 py-2">
-              <div className="flex gap-1">
-                <div className="h-2 w-2 animate-bounce rounded-full bg-slate-400"></div>
-                <div className="h-2 w-2 animate-bounce rounded-full bg-slate-400" style={{ animationDelay: '0.1s' }}></div>
-                <div className="h-2 w-2 animate-bounce rounded-full bg-slate-400" style={{ animationDelay: '0.2s' }}></div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Input */}
-      <div className="flex gap-2 border-t border-white/10 p-3">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-          placeholder="Ask me anything about products..."
-          className="flex-1 rounded-full border border-white/10 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:ring-2 focus:ring-primary"
-          disabled={loading}
-        />
-        <button
-          onClick={sendMessage}
-          disabled={loading || !input.trim()}
-          className="flex items-center gap-2 rounded-full bg-primary px-3 py-2 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
-        >
-          <Send size={18} />
-        </button>
+            <Send size={18} />
+            <span className="whitespace-nowrap">Send</span>
+          </button>
+        </div>
       </div>
     </div>
   );

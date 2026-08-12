@@ -2,6 +2,9 @@ const { tool } = require("@langchain/core/tools");
 const { z } = require("zod");
 const axios = require("axios");
 
+const PRODUCT_SERVICE_URL = process.env.PRODUCT_SERVICE_URL || "https://product-service-wxqz.onrender.com";
+const CART_SERVICE_URL = process.env.CART_SERVICE_URL || "https://cart-service-q4y8.onrender.com";
+
 const searchProduct = tool(
     async (data) => {
         const searchQuery =
@@ -20,7 +23,7 @@ const searchProduct = tool(
 
         try {
             const response = await axios.get(
-                `https://product-service-wxqz.onrender.com/api/products?q=${encodeURIComponent(searchQuery)}`,
+                `${PRODUCT_SERVICE_URL}/api/products?q=${encodeURIComponent(searchQuery)}`,
                 {
                     headers: getHeaders
                 }
@@ -67,7 +70,8 @@ const addProductToCart = tool(
             typeof data === "string"
                 ? data
                 : data.productId || data.input;
-        const qty = typeof data === "object" ? data.qty || 1 : 1;
+        let qty = typeof data === "object" ? data.qty || data.quantity || 1 : 1;
+        qty = typeof qty === 'string' ? Number(qty) : qty;
         const token = typeof data === "object" ? data.token : undefined;
 
         // Avoid logging tokens; log only productId for traceability
@@ -88,10 +92,11 @@ const addProductToCart = tool(
             console.log("Posting to cart, hasAuthHeader=", !!postHeaders.Authorization);
 
             const response = await axios.post(
-                "https://cart-service-q4y8.onrender.com/api/cart/items",
+                `${CART_SERVICE_URL}/api/cart/items`,
                 {
                     productId,
-                    qty
+                    qty,
+                    quantity: qty
                 },
                 {
                     headers: postHeaders

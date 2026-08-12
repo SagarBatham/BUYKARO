@@ -30,6 +30,10 @@ const productCreateValidator = [
     .optional()
     .isString()
     .withMessage('currency must be a string'),
+  body('category')
+    .optional()
+    .isString()
+    .withMessage('category must be a string'),
   handleValidation
 ]
 

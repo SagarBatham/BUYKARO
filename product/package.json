@@ -8,7 +8,8 @@
     "start": "node server.js",
     "dev": "npx nodemon server.js",
     "seed:products": "node seed-products.js",
-    "generate:products": "node generate-and-insert-products.js"
+    "generate:products": "node generate-and-insert-products.js",
+    "fix:categories": "node fix-product-categories.js"
   },
   "keywords": [],
   "author": "",

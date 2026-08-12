@@ -10,10 +10,10 @@ interface LayoutProps {
 
 export function MainLayout({ children }: LayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col bg-transparent">
+    <div className="flex min-h-screen flex-col bg-[#030303]">
       <Navbar />
       <main className="flex-grow w-full">
-        <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6 lg:py-10">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
           {children}
         </div>
       </main>

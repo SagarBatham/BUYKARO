@@ -1,100 +1,121 @@
 'use client';
 
+import { Suspense } from 'react';
 import { MainLayout } from '@/components/MainLayout';
 import Link from 'next/link';
-import { ShoppingCart, Users, Zap, Shield, ArrowRight, Sparkles } from 'lucide-react';
+import { ShoppingCart, Users, Zap, Shield, ArrowRight, Sparkles, CheckCircle2, Globe2 } from 'lucide-react';
 import { ProductGrid } from '@/components/ProductGrid';
+
+const benefits = [
+  { icon: ShoppingCart, title: 'Curated selection', desc: 'Discover fast-moving essentials and standout finds without the noise.' },
+  { icon: Zap, title: 'Fast delivery', desc: 'Move from checkout to doorstep with a dependable experience.' },
+  { icon: Shield, title: 'Secure purchase', desc: 'Protected payments and trusted support at every step.' },
+  { icon: Users, title: 'Human support', desc: 'Guidance from real people whenever you need a quick answer.' },
+];
+
+const stats = [
+  { value: '24/7', label: 'Live support' },
+  { value: '99.9%', label: 'Checkout uptime' },
+  { value: '2.1M+', label: 'Products indexed' },
+  { value: '4.9/5', label: 'Buyer rating' },
+];
+
+const trustPoints = ['Monochrome-first interface', 'Enterprise-grade reliability', 'No clutter, just clarity'];
 
 export default function Home() {
   return (
     <MainLayout>
-      <section className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-slate-950 via-slate-900 to-primary px-6 py-16 text-white shadow-2xl sm:px-10 lg:px-14 lg:py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.16),_transparent_40%)]" />
-        <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section className="overflow-hidden rounded-[36px] border border-white/10 bg-[#050505] px-6 py-10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_30px_80px_-30px_rgba(255,255,255,0.25)] sm:px-8 lg:px-12 lg:py-14">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-slate-100 backdrop-blur">
-              <Sparkles size={16} />
-              Fresh deals every day
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-gray-300">
+              <Sparkles size={14} />
+              Premium commerce, simplified
             </div>
-            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-              Shop smarter with <span className="text-secondary">BuyKaro</span>
+            <h1 className="max-w-3xl text-4xl font-semibold leading-[0.95] tracking-[-0.03em] text-white sm:text-5xl lg:text-7xl">
+              Discover the sharpest way to buy online.
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-              Discover premium products, fast delivery, and a beautifully simple shopping experience built for modern buyers.
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-gray-400">
+              BuyKaro brings together a refined storefront, dependable delivery, and calm product discovery in a design that feels unmistakably premium.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/products" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-slate-900 transition hover:opacity-90">
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/products" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-black transition hover:opacity-90">
                 Start Shopping
                 <ArrowRight size={18} />
               </Link>
-              <Link href="/ai-buddy" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/20">
+              <Link href="/ai-buddy" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10">
                 Try AI Buddy
               </Link>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-2xl backdrop-blur">
-            <div className="rounded-2xl border border-white/10 bg-slate-950/80 p-6 text-white shadow-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Why buyers love us</p>
-              <div className="mt-6 space-y-4">
-                {[
-                  ['Wide selection', 'Thousands of products across every category.'],
-                  ['Fast checkout', 'Secure payments and effortless ordering.'],
-                  ['Real support', 'Friendly help whenever you need it.'],
-                ].map(([title, desc]) => (
-                  <div key={title} className="rounded-2xl border border-white/10 bg-slate-800/80 p-4">
-                    <h3 className="font-semibold text-white">{title}</h3>
-                    <p className="mt-1 text-sm text-slate-400">{desc}</p>
+          <div className="rounded-[28px] border border-white/10 bg-[#0a0a0a] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+            <div className="rounded-[24px] border border-white/10 bg-black/80 p-5">
+              <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">
+                <Globe2 size={16} />
+                Built for modern buyers
+              </div>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                    <p className="text-2xl font-semibold text-white">{stat.value}</p>
+                    <p className="mt-1 text-sm uppercase tracking-[0.2em] text-gray-500">{stat.label}</p>
                   </div>
                 ))}
               </div>
+              <ul className="mt-6 space-y-3">
+                {trustPoints.map((point) => (
+                  <li key={point} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-gray-300">
+                    <CheckCircle2 size={16} className="text-white" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mt-12">
-        <div className="mb-8 flex items-end justify-between gap-4">
+      <section className="mt-14 border-t border-white/10 pt-12">
+        <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Benefits</p>
-            <h2 className="text-3xl font-semibold text-white">Why Choose BuyKaro?</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Why BuyKaro</p>
+            <h2 className="text-3xl font-semibold text-white">A quieter kind of excellence.</h2>
           </div>
+          <p className="max-w-2xl text-sm leading-7 text-gray-400">Thoughtful defaults, minimal visual noise, and consistent delivery create a shopping experience that feels calm and confident.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {[
-            { icon: ShoppingCart, title: 'Wide Selection', desc: 'Explore products from trusted sellers across top categories.', color: 'text-primary' },
-            { icon: Zap, title: 'Fast Shipping', desc: 'Quick delivery and smooth logistics from checkout to doorstep.', color: 'text-secondary' },
-            { icon: Shield, title: 'Secure Payments', desc: 'Protected transactions with reliable payment support.', color: 'text-amber-500' },
-            { icon: Users, title: '24/7 Support', desc: 'Friendly assistance whenever you need help with your order.', color: 'text-emerald-500' },
-          ].map((item) => (
-            <div key={item.title} className="rounded-3xl border border-white/10 bg-slate-900/80 p-6 shadow-sm backdrop-blur">
-              <item.icon className={item.color} size={32} />
+          {benefits.map((item) => (
+            <div key={item.title} className="rounded-[24px] border border-white/10 bg-[#060606] p-6 transition hover:border-white/20 hover:bg-[#0a0a0a]">
+              <item.icon className="text-white" size={28} />
               <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-400">{item.desc}</p>
+              <p className="mt-2 text-sm leading-6 text-gray-400">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mt-12 rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-sm sm:p-8">
+      <section className="mt-14 rounded-[28px] border border-white/10 bg-[#060606] p-6 shadow-sm sm:p-8">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Featured</p>
-            <h2 className="text-3xl font-semibold text-white">Popular Products</h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">Browse a curated selection of trending products loved by customers.</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gray-500">Featured</p>
+            <h2 className="text-3xl font-semibold text-white">Popular products</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-400">Browse a curated selection of items chosen for quality, simplicity, and everyday value.</p>
           </div>
-          <Link href="/products" className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+          <Link href="/products" className="inline-flex items-center gap-2 text-sm font-semibold text-white">
             View all products
             <ArrowRight size={16} />
           </Link>
         </div>
-        <ProductGrid />
+        <Suspense fallback={<div className="rounded-[24px] border border-white/10 bg-[#070707] py-12 text-center text-sm text-gray-400 shadow-sm">Loading featured products...</div>}>
+          <ProductGrid />
+        </Suspense>
       </section>
 
-      <section className="mt-12 rounded-[28px] border border-white/10 bg-slate-900/70 p-8 text-center shadow-sm sm:p-10">
-        <h2 className="text-3xl font-semibold text-white">Ready to find your next favorite item?</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-400">Explore your next purchase with quality, speed, and confidence all in one place.</p>
-        <Link href="/products" className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white transition hover:opacity-90">
+      <section className="mt-14 rounded-[28px] border border-white/10 bg-[#050505] px-6 py-10 text-center sm:px-10">
+        <h2 className="text-3xl font-semibold text-white">Ready for a cleaner way to shop?</h2>
+        <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-gray-400">Explore your next purchase with a crisp interface, dependable support, and a premium feel from start to finish.</p>
+        <Link href="/products" className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-black transition hover:opacity-90">
           Browse Now
           <ArrowRight size={16} />
         </Link>

@@ -112,30 +112,31 @@ export function Checkout() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl space-y-6">
-      <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-sm">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Checkout</p>
-        <h1 className="mt-2 text-3xl font-semibold text-white">Complete your order</h1>
+    <div className="mx-auto max-w-6xl space-y-8">
+      <div className="rounded-[32px] border border-white/10 bg-[#050505]/90 p-8 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.9)] backdrop-blur">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Checkout</p>
+        <h1 className="mt-3 text-4xl font-semibold text-white">Review & place your order</h1>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">Choose your shipping address, review the order details, and proceed to the secure payment flow built for a premium shopping experience.</p>
       </div>
 
-      {error && <div className="rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">{error}</div>}
+      {error && <div className="rounded-3xl border border-red-500/20 bg-red-500/10 p-5 text-sm text-red-100">{error}</div>}
 
-      <div className="grid gap-6 md:grid-cols-[1.3fr_0.7fr]">
+      <div className="grid gap-6 xl:grid-cols-[1.4fr_0.6fr]">
         <div className="space-y-6">
-          <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-sm">
-            <h2 className="mb-4 text-xl font-semibold text-white">Shipping Address</h2>
+          <div className="rounded-[32px] border border-white/10 bg-slate-950/85 p-7 shadow-sm">
+            <h2 className="mb-5 text-xl font-semibold text-white">Shipping Address</h2>
             {loading ? (
               <p className="text-sm text-slate-400">Loading addresses...</p>
             ) : addresses.length === 0 ? (
               <p className="text-sm text-slate-400">No addresses found. <Link href="/profile" className="font-semibold text-primary hover:underline">Add an address</Link></p>
             ) : (
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {addresses.map((address) => (
-                  <label key={address._id} className="flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-slate-800/70 p-4 transition hover:bg-slate-800">
-                    <input type="radio" name="address" value={address._id} checked={selectedAddressId === address._id} onChange={(e) => setSelectedAddressId(e.target.value)} className="mt-1" />
+                  <label key={address._id} className="group flex cursor-pointer items-start gap-4 rounded-[24px] border border-white/10 bg-slate-900/80 p-5 transition hover:border-primary/60 hover:bg-slate-900">
+                    <input type="radio" name="address" value={address._id} checked={selectedAddressId === address._id} onChange={(e) => setSelectedAddressId(e.target.value)} className="mt-1 h-5 w-5 accent-primary" />
                     <div>
-                      <p className="font-semibold text-white">{address.street}, {address.city}</p>
-                      <p className="text-sm text-slate-400">{address.state}, {address.zip}, {address.country}</p>
+                      <p className="font-semibold text-white group-hover:text-primary">{address.street}, {address.city}</p>
+                      <p className="mt-1 text-sm text-slate-400">{address.state}, {address.zip}, {address.country}</p>
                     </div>
                   </label>
                 ))}
@@ -143,34 +144,43 @@ export function Checkout() {
             )}
           </div>
 
-          <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-sm">
-            <h2 className="mb-4 text-xl font-semibold text-white">Order Summary</h2>
-            <div className="space-y-3">
+          <div className="rounded-[32px] border border-white/10 bg-slate-950/85 p-7 shadow-sm">
+            <h2 className="mb-5 text-xl font-semibold text-white">Order Summary</h2>
+            <div className="space-y-4">
               {items.map((item) => {
-              const itemPrice = Number((item as any).price?.amount ?? item.price ?? 0);
-              const itemQuantity = Number(item.quantity ?? 0);
-              return (
-                <div key={item.productId} className="flex items-center justify-between text-sm text-slate-400">
-                  <span>{item.title} × {itemQuantity}</span>
-                  <span className="font-semibold text-white">₹{itemPrice * itemQuantity}</span>
-                </div>
-              );
-            })}
+                const itemPrice = Number((item as any).price?.amount ?? item.price ?? 0);
+                const itemQuantity = Number(item.quantity ?? 0);
+                return (
+                  <div key={item.productId} className="flex items-center justify-between rounded-3xl bg-slate-900/80 px-4 py-4 text-sm text-slate-300">
+                    <span>{item.title} × {itemQuantity}</span>
+                    <span className="font-semibold text-white">₹{itemPrice * itemQuantity}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
 
-        <div className="h-fit rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-sm">
-          <h2 className="mb-4 text-xl font-semibold text-white">Price Details</h2>
-          <div className="space-y-3 border-b border-white/10 pb-4">
+        <div className="rounded-[32px] border border-white/10 bg-slate-950/90 p-7 shadow-sm">
+          <div className="flex items-center justify-between gap-3 rounded-3xl border border-white/10 bg-[#0d0d12]/70 px-5 py-4">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Total payment</p>
+              <p className="mt-2 text-3xl font-semibold text-white">₹{getTotalPrice()}</p>
+            </div>
+            <span className="rounded-full bg-primary/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-primary">Secure</span>
+          </div>
+
+          <div className="mt-6 space-y-4 border-b border-white/10 pb-5">
             <div className="flex justify-between text-sm text-slate-400"><span>Subtotal</span><span>₹{getTotalPrice()}</span></div>
             <div className="flex justify-between text-sm text-slate-400"><span>Shipping</span><span>Free</span></div>
             <div className="flex justify-between text-sm text-slate-400"><span>Tax</span><span>₹0</span></div>
           </div>
-          <div className="mt-4 flex justify-between text-lg font-semibold text-white"><span>Total</span><span>₹{getTotalPrice()}</span></div>
-          <button onClick={handleCreateOrder} disabled={submitting || addresses.length === 0} className="mt-6 w-full rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-60">
+
+          <button onClick={handleCreateOrder} disabled={submitting || addresses.length === 0} className="mt-6 w-full rounded-full bg-primary px-6 py-4 text-sm font-semibold text-white transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60">
             {submitting ? 'Processing...' : 'Continue to Payment'}
           </button>
+
+          <p className="mt-4 text-center text-sm text-slate-500">Payments are processed securely via Razorpay. You can complete the order and track it from your profile.</p>
         </div>
       </div>
     </div>

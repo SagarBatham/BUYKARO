@@ -65,57 +65,109 @@ export function ProductDetail({ productId }: ProductDetailProps) {
 
   return (
     <div className="rounded-[32px] border border-white/10 bg-slate-900/80 p-6 shadow-[0_20px_70px_-30px_rgba(15,23,42,0.9)] sm:p-8">
-      <div className="grid gap-8 md:grid-cols-2">
-        <div className="overflow-hidden rounded-[28px] border border-white/10 bg-slate-800">
-          {(product.images?.[0]?.url || product.image) && <img src={product.images?.[0]?.url || product.image} alt={product.title} className="h-[420px] w-full object-cover" />}
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-slate-800 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <span>{product.category || 'Featured'}</span>
+          </div>
+          <h1 className="text-4xl font-semibold text-white sm:text-5xl">{product.title}</h1>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">Premium styling and rich product details for a superior shopping experience.</p>
+        </div>
+        <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-slate-300">
+          <span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+          {product.stock && product.stock > 0 ? 'In stock' : 'Out of stock'}
+        </div>
+      </div>
+
+      <div className="grid gap-8 lg:grid-cols-[1.2fr_0.9fr]">
+        <div className="space-y-6">
+          <div className="overflow-hidden rounded-[32px] border border-white/10 bg-slate-800 shadow-lg shadow-black/20">
+            {(product.images?.[0]?.url || product.image) ? (
+              <img src={product.images?.[0]?.url || product.image} alt={product.title} className="h-[520px] w-full object-cover" />
+            ) : (
+              <div className="flex h-[520px] items-center justify-center bg-slate-900 text-slate-500">Image not available</div>
+            )}
+          </div>
+
+          {product.images && product.images.length > 1 && (
+            <div className="grid grid-cols-3 gap-3">
+              {product.images.slice(0, 3).map((img, idx) => (
+                <div key={idx} className="overflow-hidden rounded-[24px] border border-white/10 bg-slate-800">
+                  <img src={img.url} alt={`${product.title} ${idx + 1}`} className="h-24 w-full object-cover" />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="space-y-6">
-          <div>
-            <div className="mb-3 inline-flex rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">{product.category || 'Featured'}</div>
-            <h1 className="text-3xl font-semibold text-white">{product.title}</h1>
-            <div className="mt-3 flex items-center gap-2 text-sm text-slate-400">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => <Star key={i} size={16} className={i < 4 ? 'fill-amber-400 text-amber-400' : 'text-slate-300'} />)}
+          <div className="rounded-[28px] border border-white/10 bg-slate-800/80 p-6">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.25em] text-slate-400">Price</p>
+                <p className="mt-2 text-5xl font-semibold text-white">₹{product.price.amount}</p>
               </div>
-              <span>(128 reviews)</span>
-            </div>
-          </div>
-
-          <div className="rounded-[24px] border border-white/10 bg-slate-800/70 p-5">
-            <p className="text-4xl font-semibold text-primary">₹{product.price.amount}</p>
-            <p className="mt-1 text-sm text-slate-400">{product.price.currency}</p>
-          </div>
-
-          <div>
-            <h3 className="mb-2 text-lg font-semibold text-white">Description</h3>
-            <p className="leading-7 text-slate-400">{product.description}</p>
-          </div>
-
-          <div className="rounded-[24px] border border-white/10 bg-slate-800/70 p-4 text-sm text-slate-400">
-            <p><strong>Stock available:</strong> {product.stock ?? 0} units</p>
-          </div>
-
-          <div className="space-y-4">
-            <div className="flex flex-wrap items-center gap-4">
-              <label className="text-sm font-semibold text-slate-300">Quantity</label>
-              <div className="flex items-center overflow-hidden rounded-full border border-white/10 bg-slate-800">
-                <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="px-4 py-2 text-lg text-slate-300 transition hover:bg-slate-700">−</button>
-                <input type="number" value={quantity} onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))} className="w-16 border-none bg-transparent text-center text-white outline-none" min="1" max={product.stock ?? 0} />
-                <button onClick={() => setQuantity(Math.min(product.stock ?? 0, quantity + 1))} className="px-4 py-2 text-lg text-slate-300 transition hover:bg-slate-700">+</button>
-              </div>
+              <div className="rounded-2xl bg-white/5 px-4 py-3 text-sm font-semibold text-slate-200">{product.price.currency}</div>
             </div>
 
-              <button onClick={handleAddToCart} disabled={(product.stock ?? 0) === 0} className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-60">
-              <ShoppingCart size={18} />
+            <div className="mt-6 grid gap-3 text-sm text-slate-300">
+              <div className="rounded-2xl bg-slate-900/70 p-4">
+                <p className="text-slate-400">Category</p>
+                <p className="mt-1 font-medium text-white">{product.category || 'General'}</p>
+              </div>
+              <div className="rounded-2xl bg-slate-900/70 p-4">
+                <p className="text-slate-400">Stock</p>
+                <p className="mt-1 font-medium text-white">{product.stock ?? 0} units</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[28px] border border-white/10 bg-slate-800/80 p-6">
+            <h2 className="mb-4 text-xl font-semibold text-white">Product Details</h2>
+            <p className="leading-7 text-slate-300">{product.description}</p>
+          </div>
+
+          <div className="space-y-4 rounded-[28px] border border-white/10 bg-slate-800/80 p-6">
+            <div className="space-y-3">
+              <label className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-400">Quantity</label>
+              <div className="flex items-center gap-3 rounded-full border border-white/10 bg-slate-900/70 px-3 py-2">
+                <button
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  className="rounded-full px-4 py-2 text-lg text-slate-300 transition hover:bg-slate-700"
+                >
+                  −
+                </button>
+                <input
+                  type="number"
+                  value={quantity}
+                  onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                  className="w-20 rounded-full border border-white/10 bg-slate-900 px-3 py-2 text-center text-white outline-none"
+                  min="1"
+                  max={product.stock ?? 0}
+                />
+                <button
+                  onClick={() => setQuantity(Math.min(product.stock ?? 0, quantity + 1))}
+                  className="rounded-full px-4 py-2 text-lg text-slate-300 transition hover:bg-slate-700"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <button
+              onClick={handleAddToCart}
+              disabled={(product.stock ?? 0) === 0}
+              className="flex w-full items-center justify-center gap-3 rounded-full bg-primary px-5 py-4 text-sm font-semibold text-slate-950 transition hover:opacity-90 disabled:opacity-60"
+            >
+              <ShoppingCart size={20} />
               {(product.stock ?? 0) === 0 ? 'Out of Stock' : 'Add to Cart'}
             </button>
           </div>
 
-          <div className="grid gap-3 rounded-[24px] border border-white/10 bg-slate-800/70 p-4 text-sm text-slate-400 sm:grid-cols-3">
-            <div className="flex items-center gap-2"><Truck size={16} className="text-primary" /> Free shipping</div>
-            <div className="flex items-center gap-2"><RotateCcw size={16} className="text-primary" /> 30-day returns</div>
-            <div className="flex items-center gap-2"><ShieldCheck size={16} className="text-primary" /> Secure checkout</div>
+          <div className="grid gap-3 rounded-[28px] border border-white/10 bg-slate-800/80 p-5 text-sm text-slate-300 sm:grid-cols-3">
+            <div className="flex items-center gap-2"><Truck size={16} className="text-primary" /><span>Free shipping</span></div>
+            <div className="flex items-center gap-2"><RotateCcw size={16} className="text-primary" /><span>30-day returns</span></div>
+            <div className="flex items-center gap-2"><ShieldCheck size={16} className="text-primary" /><span>Secure checkout</span></div>
           </div>
         </div>
       </div>

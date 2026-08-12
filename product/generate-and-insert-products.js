@@ -186,6 +186,7 @@ async function main() {
         title: item.title,
         description: item.description,
         price: { amount: randomInt(min, max), currency: 'INR' },
+        category: item.category || 'General',
         seller: new ObjectId(pickSeller()),
         images: [
           {

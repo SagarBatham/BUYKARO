@@ -97,39 +97,39 @@ export function CartView() {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-[32px] border border-white/10 bg-slate-900/80 p-10 text-center shadow-sm">
-        <div className="flex items-center justify-center mx-auto mb-4 rounded-full h-14 w-14 bg-slate-800 text-primary">
+      <div className="rounded-[32px] border border-white/10 bg-[#060606] p-10 text-center shadow-sm">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white">
           <ShoppingBag size={24} />
         </div>
         <h2 className="mb-3 text-2xl font-semibold text-white">Your cart is empty</h2>
-        <p className="mb-6 text-sm text-slate-400">Browse our collection and add your favorite items to begin checkout.</p>
-        <Link href="/products" className="inline-flex px-6 py-3 text-sm font-semibold text-white transition rounded-full bg-primary hover:opacity-90">Continue shopping</Link>
+        <p className="mb-6 text-sm leading-6 text-gray-400">Browse our collection and add your favorite items to begin checkout.</p>
+        <Link href="/products" className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:opacity-90">Continue shopping</Link>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-sm">
+      <div className="rounded-[28px] border border-white/10 bg-[#060606] p-6 shadow-sm">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Cart</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">Cart</p>
             <h1 className="text-3xl font-semibold text-white">Shopping Cart</h1>
           </div>
-          <p className="text-sm text-slate-400">{items.length} item{items.length > 1 ? 's' : ''} ready for checkout</p>
+          <p className="text-sm text-gray-400">{items.length} item{items.length > 1 ? 's' : ''} ready for checkout</p>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/80 shadow-sm">
+      <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[#060606] shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px]">
-            <thead className="bg-slate-50">
+            <thead className="bg-[#0c0c0c]">
               <tr>
-                <th className="px-4 py-3 text-sm font-semibold text-left text-slate-300">Product</th>
-                <th className="px-4 py-3 text-sm font-semibold text-right text-slate-300">Price</th>
-                <th className="px-4 py-3 text-sm font-semibold text-center text-slate-300">Quantity</th>
-                <th className="px-4 py-3 text-sm font-semibold text-right text-slate-300">Total</th>
-                <th className="px-4 py-3 text-sm font-semibold text-center text-slate-300">Action</th>
+                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-400">Product</th>
+                <th className="px-4 py-3 text-right text-sm font-semibold text-gray-400">Price</th>
+                <th className="px-4 py-3 text-center text-sm font-semibold text-gray-400">Quantity</th>
+                <th className="px-4 py-3 text-right text-sm font-semibold text-gray-400">Total</th>
+                <th className="px-4 py-3 text-center text-sm font-semibold text-gray-400">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -141,16 +141,16 @@ export function CartView() {
                 return (
                   <tr key={item.productId} className="border-t border-white/10">
                     <td className="px-4 py-4 font-medium text-white">{item.title}</td>
-                    <td className="px-4 py-4 text-right text-slate-400">₹{numericPrice}</td>
+                    <td className="px-4 py-4 text-right text-gray-300">₹{numericPrice}</td>
                     <td className="px-4 py-4 text-center">
                       <div className="flex items-center justify-center gap-2">
-                        <button onClick={() => handleUpdateQuantity(item.productId, Math.max(1, item.quantity - 1))} className="rounded-full border border-white/10 p-1.5 text-slate-400 transition hover:bg-slate-800"><Minus size={14} /></button>
-                        <input type="number" value={item.quantity} onChange={(e) => handleUpdateQuantity(item.productId, parseInt(e.target.value) || 1)} className="w-12 px-2 py-1 text-sm text-center text-white border rounded-full outline-none border-white/10 bg-slate-800" min="1" />
-                        <button onClick={() => handleUpdateQuantity(item.productId, item.quantity + 1)} className="rounded-full border border-white/10 p-1.5 text-slate-400 transition hover:bg-slate-800"><Plus size={14} /></button>
+                        <button onClick={() => handleUpdateQuantity(item.productId, Math.max(1, item.quantity - 1))} className="rounded-full border border-white/10 p-1.5 text-gray-300 transition hover:bg-white/10"><Minus size={14} /></button>
+                        <input type="number" value={item.quantity} onChange={(e) => handleUpdateQuantity(item.productId, parseInt(e.target.value) || 1)} className="w-12 rounded-full border border-white/10 bg-[#111111] px-2 py-1 text-center text-sm text-white outline-none" min="1" />
+                        <button onClick={() => handleUpdateQuantity(item.productId, item.quantity + 1)} className="rounded-full border border-white/10 p-1.5 text-gray-300 transition hover:bg-white/10"><Plus size={14} /></button>
                       </div>
                     </td>
-                    <td className="px-4 py-4 font-semibold text-right text-white">₹{numericPrice * item.quantity}</td>
-                    <td className="px-4 py-4 text-center"><button onClick={() => handleRemoveItem(item.productId)} className="p-2 text-red-500 transition rounded-full hover:bg-red-50"><Trash2 size={16} /></button></td>
+                    <td className="px-4 py-4 text-right font-semibold text-white">₹{numericPrice * item.quantity}</td>
+                    <td className="px-4 py-4 text-center"><button onClick={() => handleRemoveItem(item.productId)} className="rounded-full p-2 text-red-400 transition hover:bg-white/10"><Trash2 size={16} /></button></td>
                   </tr>
                 );
               })}
@@ -159,11 +159,11 @@ export function CartView() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-end gap-4 rounded-[28px] border border-white/10 bg-slate-900/80 p-6 shadow-sm md:flex-row">
-        <button onClick={handleClearCart} className="px-6 py-3 text-sm font-semibold transition border rounded-full border-white/10 text-slate-300 hover:bg-slate-800">Clear Cart</button>
+      <div className="flex flex-col justify-end gap-4 rounded-[28px] border border-white/10 bg-[#060606] p-6 shadow-sm md:flex-row">
+        <button onClick={handleClearCart} className="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-gray-300 transition hover:bg-white/10">Clear Cart</button>
         <div className="ml-auto text-right">
-          <p className="mb-2 text-sm text-slate-400">Subtotal <span className="ml-2 font-semibold text-white">₹{getTotalPrice()}</span></p>
-          <Link href="/checkout" className="inline-flex px-8 py-3 text-sm font-semibold text-white transition rounded-full bg-primary hover:opacity-90">Proceed to Checkout</Link>
+          <p className="mb-2 text-sm text-gray-400">Subtotal <span className="ml-2 font-semibold text-white">₹{getTotalPrice()}</span></p>
+          <Link href="/checkout" className="inline-flex rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:opacity-90">Proceed to Checkout</Link>
         </div>
       </div>
     </div>

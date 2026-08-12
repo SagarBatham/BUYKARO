@@ -11,11 +11,11 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-6">
-        <Link href="/" className="flex items-center gap-2 text-xl font-semibold text-white">
-          <div className="rounded-full bg-gradient-to-br from-primary to-secondary p-2">
-            <Sparkles size={16} />
+    <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+        <Link href="/" className="flex items-center gap-2 text-lg font-semibold tracking-[0.2em] text-white uppercase">
+          <div className="rounded-full border border-white/15 bg-white/10 p-2">
+            <Sparkles size={15} />
           </div>
           <span>BuyKaro</span>
         </Link>
@@ -26,7 +26,7 @@ export function Navbar() {
             <ShoppingCart size={16} />
             <span>Cart</span>
             {cartItems.length > 0 ? (
-              <span className="ml-1 rounded-full bg-primary px-2 py-1 text-[11px] font-semibold text-white">
+              <span className="ml-1 rounded-full bg-white px-2 py-1 text-[11px] font-semibold text-black">
                 {cartItems.length}
               </span>
             ) : null}
@@ -39,16 +39,16 @@ export function Navbar() {
                 <User size={16} />
                 {user.fullName?.firstName || 'Account'}
               </button>
-              <div className="absolute right-0 mt-2 hidden w-56 rounded-xl border border-white/10 bg-slate-900/95 p-2 text-slate-200 shadow-xl group-hover:block">
+              <div className="absolute right-0 mt-2 hidden w-56 rounded-2xl border border-white/10 bg-[#070707] p-2 text-gray-200 shadow-xl group-hover:block">
                 {user?.role === 'seller' ? (
-                  <Link href="/seller" className="block rounded-lg px-3 py-2 hover:bg-white/10">Seller Dashboard</Link>
+                  <Link href="/seller" className="block rounded-xl px-3 py-2 hover:bg-white/10">Seller Dashboard</Link>
                 ) : null}
                 <button
                   onClick={() => {
                     logout();
                     window.location.href = '/login';
                   }}
-                  className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left hover:bg-white/10"
+                  className="flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left hover:bg-white/10"
                 >
                   <LogOut size={16} />
                   Logout
@@ -57,10 +57,10 @@ export function Navbar() {
             </div>
           ) : (
             <>
-              <Link href="/login" className="rounded-full px-4 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white">
+              <Link href="/login" className="rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/10 hover:text-white">
                 Login
               </Link>
-              <Link href="/register" className="rounded-full bg-gradient-to-r from-primary to-secondary px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90">
+              <Link href="/register" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:opacity-90">
                 Register
               </Link>
             </>
@@ -73,22 +73,22 @@ export function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-white/10 bg-slate-950/95 px-4 py-4 md:hidden">
-          <div className="flex flex-col gap-2 text-sm text-slate-200">
-            <Link href="/products" className="rounded-lg px-3 py-2 hover:bg-white/10">Products</Link>
-            <Link href="/cart" className="rounded-lg px-3 py-2 hover:bg-white/10">Cart</Link>
+        <div className="border-t border-white/10 bg-[#040404] px-4 py-4 md:hidden">
+          <div className="flex flex-col gap-2 text-sm text-gray-300">
+            <Link href="/products" className="rounded-xl px-3 py-2 hover:bg-white/10">Products</Link>
+            <Link href="/cart" className="rounded-xl px-3 py-2 hover:bg-white/10">Cart</Link>
             {user && user.id ? (
               <>
-                <Link href="/orders" className="rounded-lg px-3 py-2 hover:bg-white/10">Orders</Link>
+                <Link href="/orders" className="rounded-xl px-3 py-2 hover:bg-white/10">Orders</Link>
                 {user?.role === 'seller' ? (
-                  <Link href="/seller" className="rounded-lg px-3 py-2 hover:bg-white/10">Seller Dashboard</Link>
+                  <Link href="/seller" className="rounded-xl px-3 py-2 hover:bg-white/10">Seller Dashboard</Link>
                 ) : null}
-                <button onClick={() => { logout(); window.location.href = '/login'; }} className="rounded-lg px-3 py-2 text-left hover:bg-white/10">Logout</button>
+                <button onClick={() => { logout(); window.location.href = '/login'; }} className="rounded-xl px-3 py-2 text-left hover:bg-white/10">Logout</button>
               </>
             ) : (
               <>
-                <Link href="/login" className="rounded-lg px-3 py-2 hover:bg-white/10">Login</Link>
-                <Link href="/register" className="rounded-lg px-3 py-2 hover:bg-white/10">Register</Link>
+                <Link href="/login" className="rounded-xl px-3 py-2 hover:bg-white/10">Login</Link>
+                <Link href="/register" className="rounded-xl px-3 py-2 hover:bg-white/10">Register</Link>
               </>
             )}
           </div>
@@ -100,7 +100,7 @@ export function Navbar() {
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-slate-200 transition hover:bg-white/10 hover:text-white">
+    <Link href={href} className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/10 hover:text-white">
       {children}
     </Link>
   );

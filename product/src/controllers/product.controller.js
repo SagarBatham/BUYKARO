@@ -5,7 +5,7 @@ const { publishToQueue } = require('../broker/broker')
 
 async function createProduct(req, res) {
   try {
-    const { title, description, price, currency } = req.body
+    const { title, description, price, currency, category } = req.body
     const seller = req.user && req.user.id
     if (!seller) return res.status(401).json({ message: 'unauthorized' })
 
@@ -21,6 +21,7 @@ async function createProduct(req, res) {
       title,
       description,
       price: { amount, currency: curr },
+      category: category || 'General',
       seller,
       images
     })
@@ -36,12 +37,17 @@ async function createProduct(req, res) {
 
 async function getProducts(req, res) {
   try {
-    const { q, minprice, maxprice, skip = 0, limit = 20 } = req.query
+    const { q, minprice, maxprice, skip = 0, limit = 24, category } = req.query
 
     const filter = {}
 
     if (q) {
       filter.$text = { $search: q }
+    }
+
+    if (category) {
+      const escapeRegex = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+      filter.category = { $regex: `^${escapeRegex(category)}$`, $options: 'i' }
     }
 
     if (minprice) {
@@ -52,7 +58,9 @@ async function getProducts(req, res) {
       filter['price.amount'] = { ...filter['price.amount'], $lte: Number(maxprice) }
     }
 
-    const products = await productModel.find(filter).skip(Number(skip)).limit(Math.min(Number(limit)), 20)
+    const parsedSkip = Number(skip) || 0
+    const parsedLimit = Math.min(Math.max(Number(limit) || 24, 1), 100)
+    const products = await productModel.find(filter).skip(parsedSkip).limit(parsedLimit)
 
     return res.status(200).json({
       data: products
@@ -100,7 +108,7 @@ async function updateProducts(req, res) {
     })
   }
 
-  const allowedUpdates=['title','description' ,'price'];
+  const allowedUpdates=['title','description','price','category'];
   for(const key of Object.keys(req.body)){
     if(allowedUpdates.includes(key)){
       if(key=='price' && typeof req.body.price=='object'){
@@ -110,8 +118,8 @@ async function updateProducts(req, res) {
         if(req.body.price.currency !=undefined){
           product.price.currency=req.body.price.currency
         }
-      }else{
-        product[key] = req.body[ key ]
+      } else {
+        product[key] = req.body[key]
       }
     }
   }

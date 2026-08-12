@@ -3,7 +3,15 @@ const mongoose=require("mongoose")
 // Helper: ensure numeric quantity from either `qty` or `quantity`
 function normalizeQty(body) {
     if (typeof body.quantity === "number") return body.quantity;
+    if (typeof body.quantity === "string" && body.quantity.trim() !== "") {
+        const quantity = Number(body.quantity);
+        return Number.isFinite(quantity) ? quantity : null;
+    }
     if (typeof body.qty === "number") return body.qty;
+    if (typeof body.qty === "string" && body.qty.trim() !== "") {
+        const qty = Number(body.qty);
+        return Number.isFinite(qty) ? qty : null;
+    }
     return null;
 }
 
@@ -48,14 +56,11 @@ async function addItemtoCart(req, res) {
             .json({ error: "productId and numeric qty required" });
     }
 
-    const user = req.user;
-
-    console.log(user);
     if (!mongoose.Types.ObjectId.isValid(productId)) {
-    return res.status(400).json({
-        message: "Invalid Product ID"
-    });
-}
+        return res.status(400).json({
+            message: "Invalid Product ID"
+        });
+    }
 
     if (!user) {
         const existing = inMemoryCart.items.find(
@@ -121,8 +126,6 @@ async function updateItemQty(req, res) {
             error: "numeric qty required",
         });
     }
-
-    const user = req.user;
 
     if (!user) {
         const item = inMemoryCart.items.find(

@@ -19,6 +19,11 @@ const productSchema=new mongoose.Schema({
             default:'INR'
         }
     },
+    category:{
+      type:String,
+      trim:true,
+      default:'General'
+    },
     seller:{
         type:mongoose.Schema.Types.ObjectId,
         required:true
