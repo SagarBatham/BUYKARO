@@ -55,9 +55,9 @@ export function LoginForm() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/80 shadow-[0_30px_100px_-40px_rgba(15,23,42,0.8)] backdrop-blur">
+    <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/80 shadow-[0_30px_100px_-40px_rgba(15,23,42,0.8)] backdrop-blur sm:rounded-[32px]">
       <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="hidden bg-gradient-to-br from-slate-950 via-slate-900 to-primary p-8 text-white lg:flex lg:flex-col lg:justify-between">
+        <div className="hidden bg-gradient-to-br from-slate-950 via-slate-900 to-violet-700 p-8 text-white lg:flex lg:flex-col lg:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-300">Welcome back</p>
             <h2 className="mt-4 text-3xl font-semibold">Sign in to your premium shopping account.</h2>
@@ -69,10 +69,10 @@ export function LoginForm() {
           </div>
         </div>
 
-        <div className="p-8 sm:p-10">
+        <div className="w-full p-5 sm:p-8 lg:p-10">
           <div className="mb-8 text-center lg:text-left">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Login</p>
-            <h2 className="mt-2 text-3xl font-semibold text-white">Welcome back</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-violet-300">Login</p>
+            <h2 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">Welcome back</h2>
             <p className="mt-2 text-sm text-slate-400">Use your email and password to continue shopping.</p>
           </div>
 
@@ -108,9 +108,9 @@ export function LoginForm() {
             <button
               type="submit"
               disabled={loading}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-60"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60 sm:text-base"
             >
-              {loading ? 'Logging in...' : 'Login'}
+              <span className="whitespace-nowrap">{loading ? 'Logging in...' : 'Login'}</span>
               <ArrowRight size={16} />
             </button>
           </form>

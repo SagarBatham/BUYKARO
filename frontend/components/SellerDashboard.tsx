@@ -54,53 +54,57 @@ export function SellerDashboard() {
   };
 
   if (loading) {
-    return <div className="rounded-[28px] border border-white/10 bg-slate-900/80 py-12 text-center text-sm text-slate-400">Loading dashboard...</div>;
+    return <div className="rounded-[24px] border border-white/10 bg-slate-900/80 py-12 text-center text-sm text-slate-400">Loading dashboard...</div>;
   }
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-semibold text-white">Seller Dashboard</h1>
+      <h1 className="text-2xl font-semibold text-white sm:text-3xl">Seller Dashboard</h1>
 
-      {/* Metrics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5 shadow-sm sm:p-6">
           <div className="flex items-center gap-4">
-            <TrendingUp className="text-primary" size={32} />
+            <div className="rounded-2xl bg-violet-500/10 p-3 text-violet-300">
+              <TrendingUp size={24} />
+            </div>
             <div>
               <p className="text-sm text-slate-400">Total Revenue</p>
-              <p className="text-3xl font-semibold text-white">₹{metrics?.revenue || 0}</p>
+              <p className="text-2xl font-semibold text-white sm:text-3xl">₹{metrics?.revenue || 0}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5 shadow-sm sm:p-6">
           <div className="flex items-center gap-4">
-            <ShoppingBag className="text-secondary" size={32} />
+            <div className="rounded-2xl bg-emerald-500/10 p-3 text-emerald-300">
+              <ShoppingBag size={24} />
+            </div>
             <div>
               <p className="text-sm text-slate-400">Total Sales</p>
-              <p className="text-3xl font-semibold text-white">{metrics?.sales || 0}</p>
+              <p className="text-2xl font-semibold text-white sm:text-3xl">{metrics?.sales || 0}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5 shadow-sm sm:p-6">
           <div className="flex items-center gap-4">
-            <BarChart3 className="text-warning" size={32} />
+            <div className="rounded-2xl bg-amber-500/10 p-3 text-amber-300">
+              <BarChart3 size={24} />
+            </div>
             <div>
               <p className="text-sm text-slate-400">Products</p>
-              <p className="text-3xl font-semibold text-white">{products.length}</p>
+              <p className="text-2xl font-semibold text-white sm:text-3xl">{products.length}</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Top Products */}
       {metrics?.topProducts && metrics.topProducts.length > 0 && (
-        <div className="rounded-[24px] border border-white/10 bg-slate-900/80 p-6 shadow-sm">
+        <div className="rounded-[24px] border border-white/10 bg-slate-900/80 p-5 shadow-sm sm:p-6">
           <h2 className="mb-4 text-xl font-semibold text-white">Top Products</h2>
           <div className="space-y-3">
             {metrics.topProducts.slice(0, 5).map((product: any, idx: number) => (
-              <div key={idx} className="flex justify-between items-center pb-3 border-b last:border-b-0">
+              <div key={idx} className="flex items-center justify-between gap-4 border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
                 <div>
                   <p className="font-semibold text-white">{product.title}</p>
                   <p className="text-sm text-slate-400">{product.sales} sold</p>
@@ -112,11 +116,10 @@ export function SellerDashboard() {
         </div>
       )}
 
-      {/* Recent Orders */}
-      <div className="rounded-[24px] border border-white/10 bg-slate-900/80 p-6 shadow-sm">
+      <div className="rounded-[24px] border border-white/10 bg-slate-900/80 p-4 shadow-sm sm:p-6">
         <h2 className="mb-4 text-xl font-semibold text-white">Recent Orders</h2>
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="min-w-[640px] w-full">
             <thead className="bg-slate-800/70">
               <tr>
                 <th className="px-4 py-2 text-left text-sm font-semibold text-slate-300">Customer</th>
@@ -134,12 +137,8 @@ export function SellerDashboard() {
                       {order.status}
                     </span>
                   </td>
-                  <td className="px-4 py-2 text-right font-semibold text-white">
-                    ₹{order.totalAmount}
-                  </td>
-                  <td className="px-4 py-2 text-slate-300">
-                    {new Date(order.createdAt).toLocaleDateString()}
-                  </td>
+                  <td className="px-4 py-2 text-right font-semibold text-white">₹{order.totalAmount}</td>
+                  <td className="px-4 py-2 text-slate-300">{new Date(order.createdAt).toLocaleDateString()}</td>
                 </tr>
               ))}
             </tbody>

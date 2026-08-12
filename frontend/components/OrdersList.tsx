@@ -51,12 +51,12 @@ export function OrdersList() {
   };
 
   if (loading) {
-    return <div className="rounded-[28px] border border-white/10 bg-[#060606] py-12 text-center text-sm text-gray-400">Loading orders...</div>;
+    return <div className="rounded-[24px] border border-white/10 bg-[#060606] py-12 text-center text-sm text-gray-400">Loading orders...</div>;
   }
 
   if (error) {
     return (
-      <div className="rounded-[28px] border border-white/10 bg-[#060606] p-10 text-center shadow-sm">
+      <div className="rounded-[24px] border border-white/10 bg-[#060606] p-8 text-center shadow-sm sm:p-10">
         <h2 className="mb-4 text-2xl font-semibold text-white">Unable to load orders</h2>
         <p className="text-sm text-red-400">{error}</p>
       </div>
@@ -65,7 +65,7 @@ export function OrdersList() {
 
   if (orders.length === 0) {
     return (
-      <div className="rounded-[28px] border border-white/10 bg-[#060606] p-10 text-center shadow-sm">
+      <div className="rounded-[24px] border border-white/10 bg-[#060606] p-8 text-center shadow-sm sm:p-10">
         <h2 className="mb-4 text-2xl font-semibold text-white">No orders yet</h2>
         <p className="text-sm text-gray-400">Start shopping to place your first order!</p>
       </div>
@@ -73,37 +73,35 @@ export function OrdersList() {
   }
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-semibold text-white">My Orders</h1>
+    <div className="space-y-5 sm:space-y-6">
+      <h1 className="text-2xl font-semibold text-white sm:text-3xl">My Orders</h1>
 
       {orders.map((order) => (
-        <div key={order._id} className="rounded-[24px] border border-white/10 bg-[#060606] p-6 shadow-sm">
-          <div className="mb-4 flex items-start justify-between gap-4">
+        <div key={order._id} className="rounded-[22px] border border-white/10 bg-[#060606] p-4 shadow-sm sm:p-6">
+          <div className="mb-4 flex items-start justify-between gap-3">
             <div>
-              <p className="text-sm text-gray-500">Order ID</p>
-              <p className="text-lg font-semibold text-white">{order._id}</p>
+              <p className="text-xs text-gray-500 sm:text-sm">Order ID</p>
+              <p className="mt-1 text-sm font-semibold text-white break-all sm:text-lg">{order._id}</p>
             </div>
-            <span className={`rounded-full px-3 py-1 text-sm font-bold ${getStatusColor(order.status)}`}>
+            <span className={`rounded-full px-2.5 py-1 text-[11px] font-bold sm:px-3 sm:text-sm ${getStatusColor(order.status)}`}>
               {order.status}
             </span>
           </div>
 
-          <div className="mb-4 grid gap-4 border-y border-white/10 py-4 md:grid-cols-3">
+          <div className="mb-4 grid gap-3 border-y border-white/10 py-4 sm:grid-cols-3">
             <div>
-              <p className="text-sm text-gray-500">Order Date</p>
-              <p className="font-semibold text-white">
+              <p className="text-xs text-gray-500 sm:text-sm">Order Date</p>
+              <p className="mt-1 text-sm font-semibold text-white sm:text-base">
                 {new Date(order.createdAt).toLocaleDateString()}
               </p>
             </div>
             <div>
-              <p className="text-sm text-gray-500">Items</p>
-              <p className="font-semibold text-white">{order.items.length} items</p>
+              <p className="text-xs text-gray-500 sm:text-sm">Items</p>
+              <p className="mt-1 text-sm font-semibold text-white sm:text-base">{order.items.length} items</p>
             </div>
             <div>
-              <p className="text-sm text-gray-500">Total Amount</p>
-              <p className="text-lg font-semibold text-white">
-                ₹{order.totalPrice.amount}
-              </p>
+              <p className="text-xs text-gray-500 sm:text-sm">Total Amount</p>
+              <p className="mt-1 text-base font-semibold text-white sm:text-lg">₹{order.totalPrice.amount}</p>
             </div>
           </div>
 
@@ -120,7 +118,7 @@ export function OrdersList() {
             )}
           </div>
 
-          <Link href={`/orders/${order._id}`} className="font-semibold text-white hover:underline">
+          <Link href={`/orders/${order._id}`} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
             View Details
           </Link>
         </div>

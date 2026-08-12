@@ -13,7 +13,7 @@ export function MainLayout({ children }: LayoutProps) {
     <div className="flex min-h-screen flex-col bg-[#030303]">
       <Navbar />
       <main className="flex-grow w-full">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+        <div className="mx-auto w-full max-w-7xl px-3 py-4 sm:px-6 lg:px-8 lg:py-8">
           {children}
         </div>
       </main>

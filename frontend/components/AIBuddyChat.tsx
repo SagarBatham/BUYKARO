@@ -112,33 +112,30 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
     );
   }
 
-  // Increase inner chat size to make messages more visible
-  const containerHeightClass = compact ? 'h-[460px] max-h-[70vh]' : 'h-[600px] max-h-[85vh]';
-  const containerClass = `flex ${containerHeightClass} w-full max-w-xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950/90 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)]`;
-  // More right padding so scrollbar doesn't overlap right-aligned bubbles
-  const contentClass = `h-full min-h-0 overflow-y-auto pr-8 rounded-lg p-4 bg-slate-900/90`;
+  const containerHeightClass = compact ? 'h-[420px] max-h-[72vh] sm:h-[460px]' : 'h-[520px] max-h-[85vh] sm:h-[600px]';
+  const containerClass = `flex ${containerHeightClass} w-full max-w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950/90 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)] sm:max-w-xl`;
+  const contentClass = `h-full min-h-0 overflow-y-auto rounded-lg bg-slate-900/90 p-3 pr-2 sm:p-4 sm:pr-8`;
 
   return (
-    <div className="flex justify-center">
+    <div className="flex w-full justify-center px-0 sm:px-2">
       <div className={containerClass}>
-        <div className="flex items-center gap-3 px-4 py-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-800 text-white">
-            <MessageCircle size={20} />
+        <div className="flex items-center gap-3 px-3 py-3 sm:px-4">
+          <div className="flex h-9 w-9 items-center justify-center rounded-md bg-slate-800 text-white sm:h-10 sm:w-10">
+            <MessageCircle size={18} className="sm:h-5 sm:w-5" />
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-white">AI Buddy</p>
-            <h2 className="text-lg font-semibold text-white">Smart shopping</h2>
+            <p className="text-[10px] uppercase tracking-[0.25em] text-white sm:text-xs">AI Buddy</p>
+            <h2 className="text-base font-semibold text-white sm:text-lg">Smart shopping</h2>
           </div>
         </div>
 
-        <div className="flex-1 min-h-0 overflow-hidden p-3 sm:p-4">
+        <div className="flex-1 min-h-0 overflow-hidden p-2 sm:p-4">
           <div className={contentClass}>
             <div className="space-y-3">
               {messages.map((message, idx) => {
                 const isUser = message.role === 'user';
                 const alignClass = isUser ? 'justify-end' : 'justify-start';
 
-                // If a custom background color is provided, apply it via inline style
                 const customStyle = isUser
                   ? userBg
                     ? { background: userBg }
@@ -147,12 +144,11 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
                   ? { background: assistantBg }
                   : undefined;
 
-                // Use a solid, high-contrast style for user bubbles so sent messages are always visible
                 const baseBubble = isUser
                   ? (userBg ? 'text-white' : 'bg-slate-700 text-white border border-white/20 shadow-md')
                   : (assistantBg ? 'text-white' : 'bg-slate-800/95 text-white border border-white/10');
 
-                const bubbleClass = `relative z-40 max-w-[80%] min-w-[160px] min-h-[48px] rounded-lg px-4 py-3 text-base leading-6 break-words whitespace-pre-wrap ${baseBubble}`;
+                const bubbleClass = `relative z-40 max-w-[86%] min-w-[120px] rounded-xl px-3 py-2.5 text-sm leading-6 break-words whitespace-pre-wrap sm:min-w-[160px] sm:px-4 sm:py-3 sm:text-base ${baseBubble}`;
 
                 return (
                   <div key={idx} className={`flex ${alignClass}`}>
@@ -180,22 +176,22 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/10 bg-slate-900/95 px-4 py-3 shadow-inner sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-3 border-t border-white/10 bg-slate-900/95 px-3 py-3 shadow-inner sm:flex-row sm:items-center sm:px-4">
           <input
             type="text"
             value={input}
             ref={inputRef}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-            placeholder="Ask about brands, sizes, or product recommendations..."
-            className="flex-1 min-w-0 h-12 rounded-full border border-white/10 bg-slate-900 px-4 text-sm text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50"
+            placeholder="Ask about brands, sizes, or products..."
+            className="h-11 min-w-0 flex-1 rounded-full border border-white/10 bg-slate-900 px-4 text-sm text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50"
             disabled={loading}
           />
           <button
             type="button"
             onClick={sendMessage}
             disabled={loading || !input.trim()}
-            className="inline-flex h-12 min-h-[3rem] min-w-[7rem] items-center justify-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-slate-950 shadow-sm shadow-black/10 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex h-11 min-h-[2.75rem] items-center justify-center gap-2 rounded-full bg-violet-600 px-4 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <Send size={18} />
             <span className="whitespace-nowrap">Send</span>

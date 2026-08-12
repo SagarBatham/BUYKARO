@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useAuthStore, useCartStore } from '@/store';
 import { useState } from 'react';
-import { Menu, X, ShoppingCart, LogOut, User, Sparkles } from 'lucide-react';
+import { Menu, X, ShoppingCart, LogOut, User, Sparkles, Bot } from 'lucide-react';
 
 export function Navbar() {
   const { user, logout } = useAuthStore();
@@ -22,11 +22,15 @@ export function Navbar() {
 
         <div className="hidden items-center gap-2 md:flex">
           <NavLink href="/products">Products</NavLink>
+          <NavLink href="/ai-buddy">
+            <Bot size={16} />
+            <span>AI Buddy</span>
+          </NavLink>
           <NavLink href="/cart">
             <ShoppingCart size={16} />
             <span>Cart</span>
             {cartItems.length > 0 ? (
-              <span className="ml-1 rounded-full bg-white px-2 py-1 text-[11px] font-semibold text-black">
+              <span className="ml-1 rounded-full bg-violet-500 px-2 py-1 text-[11px] font-semibold text-white">
                 {cartItems.length}
               </span>
             ) : null}
@@ -40,6 +44,10 @@ export function Navbar() {
                 {user.fullName?.firstName || 'Account'}
               </button>
               <div className="absolute right-0 mt-2 hidden w-56 rounded-2xl border border-white/10 bg-[#070707] p-2 text-gray-200 shadow-xl group-hover:block">
+                <Link href="/profile" className="flex items-center gap-2 rounded-xl px-3 py-2 hover:bg-white/10">
+                  <User size={16} />
+                  Profile
+                </Link>
                 {user?.role === 'seller' ? (
                   <Link href="/seller" className="block rounded-xl px-3 py-2 hover:bg-white/10">Seller Dashboard</Link>
                 ) : null}
@@ -60,7 +68,7 @@ export function Navbar() {
               <Link href="/login" className="rounded-full px-4 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/10 hover:text-white">
                 Login
               </Link>
-              <Link href="/register" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:opacity-90">
+              <Link href="/register" className="rounded-full bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500">
                 Register
               </Link>
             </>
@@ -76,9 +84,11 @@ export function Navbar() {
         <div className="border-t border-white/10 bg-[#040404] px-4 py-4 md:hidden">
           <div className="flex flex-col gap-2 text-sm text-gray-300">
             <Link href="/products" className="rounded-xl px-3 py-2 hover:bg-white/10">Products</Link>
+            <Link href="/ai-buddy" className="rounded-xl px-3 py-2 hover:bg-white/10">AI Buddy</Link>
             <Link href="/cart" className="rounded-xl px-3 py-2 hover:bg-white/10">Cart</Link>
             {user && user.id ? (
               <>
+                <Link href="/profile" className="rounded-xl px-3 py-2 hover:bg-white/10">Profile</Link>
                 <Link href="/orders" className="rounded-xl px-3 py-2 hover:bg-white/10">Orders</Link>
                 {user?.role === 'seller' ? (
                   <Link href="/seller" className="rounded-xl px-3 py-2 hover:bg-white/10">Seller Dashboard</Link>

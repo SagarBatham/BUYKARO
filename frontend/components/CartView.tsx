@@ -5,7 +5,7 @@ import { useCartStore } from '@/store';
 import { cartAPI, productAPI } from '@/lib/apiServices';
 import { useAuth } from '@/hooks/useAuth';
 import Link from 'next/link';
-import { Trash2, Plus, Minus, ShoppingBag } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
 
 export function CartView() {
   const { items, removeItem, updateQuantity, clearCart, getTotalPrice, setItems } = useCartStore();
@@ -97,32 +97,35 @@ export function CartView() {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-[32px] border border-white/10 bg-[#060606] p-10 text-center shadow-sm">
+      <div className="mx-auto max-w-3xl rounded-[28px] border border-white/10 bg-[#060606] p-8 text-center shadow-sm sm:p-10">
         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white">
           <ShoppingBag size={24} />
         </div>
         <h2 className="mb-3 text-2xl font-semibold text-white">Your cart is empty</h2>
         <p className="mb-6 text-sm leading-6 text-gray-400">Browse our collection and add your favorite items to begin checkout.</p>
-        <Link href="/products" className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:opacity-90">Continue shopping</Link>
+        <Link href="/products" className="inline-flex items-center gap-2 rounded-full bg-violet-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500">
+          Continue shopping
+          <ArrowRight size={16} />
+        </Link>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <div className="rounded-[28px] border border-white/10 bg-[#060606] p-6 shadow-sm">
-        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div className="rounded-[24px] border border-white/10 bg-[#060606] p-4 shadow-sm sm:p-6">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">Cart</p>
-            <h1 className="text-3xl font-semibold text-white">Shopping Cart</h1>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 sm:text-sm">Cart</p>
+            <h1 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">Shopping Cart</h1>
           </div>
           <p className="text-sm text-gray-400">{items.length} item{items.length > 1 ? 's' : ''} ready for checkout</p>
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[#060606] shadow-sm">
+      <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[#060606] shadow-sm sm:rounded-[28px]">
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px]">
+          <table className="w-full min-w-[620px]">
             <thead className="bg-[#0c0c0c]">
               <tr>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-400">Product</th>
@@ -140,17 +143,25 @@ export function CartView() {
 
                 return (
                   <tr key={item.productId} className="border-t border-white/10">
-                    <td className="px-4 py-4 font-medium text-white">{item.title}</td>
-                    <td className="px-4 py-4 text-right text-gray-300">₹{numericPrice}</td>
+                    <td className="px-4 py-4 text-sm font-medium text-white sm:text-base">{item.title}</td>
+                    <td className="px-4 py-4 text-right text-sm text-gray-300 sm:text-base">₹{numericPrice}</td>
                     <td className="px-4 py-4 text-center">
                       <div className="flex items-center justify-center gap-2">
-                        <button onClick={() => handleUpdateQuantity(item.productId, Math.max(1, item.quantity - 1))} className="rounded-full border border-white/10 p-1.5 text-gray-300 transition hover:bg-white/10"><Minus size={14} /></button>
+                        <button onClick={() => handleUpdateQuantity(item.productId, Math.max(1, item.quantity - 1))} className="rounded-full border border-white/10 p-1.5 text-gray-300 transition hover:bg-white/10">
+                          <Minus size={14} />
+                        </button>
                         <input type="number" value={item.quantity} onChange={(e) => handleUpdateQuantity(item.productId, parseInt(e.target.value) || 1)} className="w-12 rounded-full border border-white/10 bg-[#111111] px-2 py-1 text-center text-sm text-white outline-none" min="1" />
-                        <button onClick={() => handleUpdateQuantity(item.productId, item.quantity + 1)} className="rounded-full border border-white/10 p-1.5 text-gray-300 transition hover:bg-white/10"><Plus size={14} /></button>
+                        <button onClick={() => handleUpdateQuantity(item.productId, item.quantity + 1)} className="rounded-full border border-white/10 p-1.5 text-gray-300 transition hover:bg-white/10">
+                          <Plus size={14} />
+                        </button>
                       </div>
                     </td>
-                    <td className="px-4 py-4 text-right font-semibold text-white">₹{numericPrice * item.quantity}</td>
-                    <td className="px-4 py-4 text-center"><button onClick={() => handleRemoveItem(item.productId)} className="rounded-full p-2 text-red-400 transition hover:bg-white/10"><Trash2 size={16} /></button></td>
+                    <td className="px-4 py-4 text-right text-sm font-semibold text-white sm:text-base">₹{numericPrice * item.quantity}</td>
+                    <td className="px-4 py-4 text-center">
+                      <button onClick={() => handleRemoveItem(item.productId)} className="rounded-full p-2 text-red-400 transition hover:bg-white/10">
+                        <Trash2 size={16} />
+                      </button>
+                    </td>
                   </tr>
                 );
               })}
@@ -159,11 +170,14 @@ export function CartView() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-end gap-4 rounded-[28px] border border-white/10 bg-[#060606] p-6 shadow-sm md:flex-row">
-        <button onClick={handleClearCart} className="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-gray-300 transition hover:bg-white/10">Clear Cart</button>
-        <div className="ml-auto text-right">
+      <div className="flex flex-col justify-end gap-3 rounded-[24px] border border-white/10 bg-[#060606] p-4 shadow-sm sm:p-6 md:flex-row md:items-center">
+        <button onClick={handleClearCart} className="rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-gray-300 transition hover:bg-white/10">Clear Cart</button>
+        <div className="md:ml-auto md:text-right">
           <p className="mb-2 text-sm text-gray-400">Subtotal <span className="ml-2 font-semibold text-white">₹{getTotalPrice()}</span></p>
-          <Link href="/checkout" className="inline-flex rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:opacity-90">Proceed to Checkout</Link>
+          <Link href="/checkout" className="inline-flex items-center justify-center gap-2 rounded-full bg-violet-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500">
+            Proceed to Checkout
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
     </div>

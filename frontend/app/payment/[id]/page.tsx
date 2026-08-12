@@ -98,26 +98,26 @@ export default function PaymentPage({ params }: PaymentPageProps) {
 
   return (
     <MainLayout>
-      <div className="mx-auto max-w-3xl rounded-[32px] border border-white/10 bg-[#040404]/95 p-8 shadow-[0_30px_100px_-40px_rgba(15,23,42,0.9)]">
-        <div className="flex flex-col gap-6 rounded-[28px] border border-white/10 bg-slate-950/90 p-8 shadow-sm">
+      <div className="mx-auto max-w-3xl rounded-[28px] border border-white/10 bg-[#040404]/95 p-4 shadow-[0_30px_100px_-40px_rgba(15,23,42,0.9)] sm:p-8">
+        <div className="flex flex-col gap-6 rounded-[24px] border border-white/10 bg-slate-950/90 p-5 shadow-sm sm:p-8">
           <div className="space-y-3 text-center">
-            <p className="text-sm uppercase tracking-[0.3em] text-primary">Secure payment</p>
-            <h1 className="text-4xl font-semibold text-white">Complete your purchase</h1>
+            <p className="text-sm uppercase tracking-[0.3em] text-violet-300">Secure payment</p>
+            <h1 className="text-3xl font-semibold text-white sm:text-4xl">Complete your purchase</h1>
             <p className="mx-auto max-w-2xl text-sm leading-7 text-slate-400">Finish your order with a fast and secure checkout flow. Razorpay handles payments and we immediately verify your transaction.</p>
           </div>
 
           {loading ? (
-            <div className="rounded-[28px] border border-white/10 bg-slate-900/80 p-8 text-center text-slate-400 shadow-sm">
+            <div className="rounded-[24px] border border-white/10 bg-slate-900/80 p-6 text-center text-slate-400 shadow-sm sm:p-8">
               <p>Preparing your payment...</p>
             </div>
           ) : error ? (
-            <div className="rounded-[28px] border border-red-500/20 bg-red-500/10 p-6 text-sm text-red-100 shadow-sm">
+            <div className="rounded-[24px] border border-red-500/20 bg-red-500/10 p-5 text-sm text-red-100 shadow-sm">
               {error}
             </div>
           ) : (
             <div className="space-y-6">
-              <div className="rounded-[28px] border border-white/10 bg-[#0d0d12]/80 p-6 shadow-sm">
-                <div className="flex items-center justify-between gap-4">
+              <div className="rounded-[24px] border border-white/10 bg-[#0d0d12]/80 p-5 shadow-sm">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-sm uppercase tracking-[0.25em] text-slate-400">Order ID</p>
                     <p className="mt-2 text-base font-semibold text-white">#{params.id}</p>
@@ -127,19 +127,19 @@ export default function PaymentPage({ params }: PaymentPageProps) {
                 <p className="mt-4 text-sm text-slate-400">Total due now. Your payment details are encrypted and securely transmitted through Razorpay.</p>
               </div>
 
-              <div className="rounded-[28px] border border-white/10 bg-slate-950/90 p-6 shadow-sm">
+              <div className="rounded-[24px] border border-white/10 bg-slate-950/90 p-5 shadow-sm">
                 <h2 className="text-lg font-semibold text-white">Billing summary</h2>
                 <div className="mt-4 grid gap-4 text-sm text-slate-400">
-                  <div className="flex items-center justify-between"><span>Subtotal</span><span className="text-white">₹{paymentData.order.totalPrice.amount}</span></div>
-                  <div className="flex items-center justify-between"><span>Convenience fee</span><span className="text-white">₹0</span></div>
-                  <div className="flex items-center justify-between"><span className="font-semibold text-white">Total</span><span className="font-semibold text-white">₹{paymentData.order.totalPrice.amount}</span></div>
+                  <div className="flex items-center justify-between gap-4"><span>Subtotal</span><span className="text-white">₹{paymentData.order.totalPrice.amount}</span></div>
+                  <div className="flex items-center justify-between gap-4"><span>Convenience fee</span><span className="text-white">₹0</span></div>
+                  <div className="flex items-center justify-between gap-4"><span className="font-semibold text-white">Total</span><span className="font-semibold text-white">₹{paymentData.order.totalPrice.amount}</span></div>
                 </div>
               </div>
 
               <button
                 onClick={openCheckout}
                 disabled={!scriptLoaded}
-                className="w-full rounded-full bg-primary px-7 py-4 text-sm font-semibold text-white transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full rounded-full bg-violet-600 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {scriptLoaded ? 'Pay with Razorpay' : 'Loading payment...'}
               </button>

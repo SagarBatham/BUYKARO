@@ -62,9 +62,9 @@ export function RegisterForm() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/80 shadow-[0_30px_100px_-40px_rgba(15,23,42,0.8)] backdrop-blur">
+    <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/80 shadow-[0_30px_100px_-40px_rgba(15,23,42,0.8)] backdrop-blur sm:rounded-[32px]">
       <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="hidden bg-gradient-to-br from-primary via-slate-900 to-slate-950 p-8 text-white lg:flex lg:flex-col lg:justify-between">
+        <div className="hidden bg-gradient-to-br from-violet-600 via-slate-900 to-slate-950 p-8 text-white lg:flex lg:flex-col lg:justify-between">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium text-slate-100">
               <Sparkles size={16} />
@@ -79,10 +79,10 @@ export function RegisterForm() {
           </div>
         </div>
 
-        <div className="p-6 sm:p-8 lg:p-10">
+        <div className="w-full p-5 sm:p-8 lg:p-10">
           <div className="mb-6 text-center lg:text-left">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Register</p>
-            <h2 className="mt-2 text-3xl font-semibold text-white">Create your account</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-violet-300">Register</p>
+            <h2 className="mt-2 text-2xl font-semibold text-white sm:text-3xl">Create your account</h2>
             <p className="mt-2 text-sm text-slate-400">Start your shopping journey in a few simple steps.</p>
           </div>
 
@@ -121,8 +121,8 @@ export function RegisterForm() {
               {errors.confirmPassword && <p className="mt-1 text-sm text-red-500">{errors.confirmPassword.message}</p>}
             </div>
 
-            <button type="submit" disabled={loading} className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-60">
-              {loading ? 'Registering...' : 'Register'}
+            <button type="submit" disabled={loading} className="flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-60 sm:text-base">
+              <span className="whitespace-nowrap">{loading ? 'Registering...' : 'Register'}</span>
               <ArrowRight size={16} />
             </button>
           </form>
