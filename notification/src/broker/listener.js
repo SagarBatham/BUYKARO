@@ -46,7 +46,7 @@ module.exports=function(){
                             </p>
 
                             <div style="text-align:center;margin:35px 0;">
-                                <a href="https://yourwebsite.com"
+                                <a href="https://buykaro-pearl.vercel.app/"
                                    style="background:#4f46e5;color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-weight:bold;display:inline-block;">
                                     Get Started
                                 </a>

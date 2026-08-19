@@ -16,6 +16,7 @@ export const authAPI = {
     email: string;
     password: string;
     fullName: { firstName: string; lastName: string };
+    role?: 'user' | 'seller';
   }) => authApi.post('/api/auth/register', data),
 
   login: async (email: string, password: string) =>

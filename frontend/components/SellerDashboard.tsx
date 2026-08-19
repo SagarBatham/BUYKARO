@@ -107,9 +107,9 @@ export function SellerDashboard() {
               <div key={idx} className="flex items-center justify-between gap-4 border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
                 <div>
                   <p className="font-semibold text-white">{product.title}</p>
-                  <p className="text-sm text-slate-400">{product.sales} sold</p>
+                  <p className="text-sm text-slate-400">{product.unitsSold} sold</p>
                 </div>
-                <p className="font-semibold text-white">₹{product.totalRevenue}</p>
+                <p className="font-semibold text-white">₹{product.revenue}</p>
               </div>
             ))}
           </div>

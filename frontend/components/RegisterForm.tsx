@@ -15,6 +15,7 @@ const registerSchema = z.object({
   confirmPassword: z.string(),
   firstName: z.string().min(2, 'First name is required'),
   lastName: z.string().min(2, 'Last name is required'),
+  role: z.enum(['user', 'seller']),
 }).refine((data) => data.password === data.confirmPassword, {
   message: 'Passwords do not match',
   path: ['confirmPassword'],
@@ -33,6 +34,7 @@ export function RegisterForm() {
     formState: { errors },
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
+    defaultValues: { role: 'user' },
   });
 
   const onSubmit = async (data: RegisterFormData) => {
@@ -50,6 +52,7 @@ export function RegisterForm() {
           firstName: data.firstName,
           lastName: data.lastName,
         },
+        role: data.role,
       });
 
       router.push('/login?registered=true');
@@ -107,6 +110,14 @@ export function RegisterForm() {
               <label className="mb-2 block text-sm font-semibold text-slate-300">Email</label>
               <input type="email" {...register('email')} className="w-full rounded-2xl border border-white/10 bg-slate-800/80 px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:bg-slate-800 focus:ring-2 focus:ring-primary/20" placeholder="your@email.com" />
               {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-semibold text-slate-300">Account type</label>
+              <select {...register('role')} className="w-full rounded-2xl border border-white/10 bg-slate-800/80 px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:bg-slate-800 focus:ring-2 focus:ring-primary/20">
+                <option value="user">Buyer</option>
+                <option value="seller">Seller</option>
+              </select>
             </div>
 
             <div>

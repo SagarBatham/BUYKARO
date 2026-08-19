@@ -30,7 +30,9 @@ async function getOrders(req, res) {
 
         const formattedOrders = orders.map((order) => ({
             _id: order._id,
-            customer: order.user?.fullName || order.user?.email || "Unknown Customer",
+            customer: order.user?.fullName
+                ? `${order.user.fullName.firstName || ""} ${order.user.fullName.lastName || ""}`.trim()
+                : order.user?.email || "Unknown Customer",
             status: order.status,
             totalAmount: order.totalPrice?.amount || 0,
             currency: order.totalPrice?.currency || "INR",
