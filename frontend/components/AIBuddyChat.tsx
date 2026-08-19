@@ -53,13 +53,6 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
 
     newSocket.on('connect_error', (error: any) => {
       console.error('AI Buddy socket connection error:', error);
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: 'Sorry, I could not reach the AI Buddy service right now.',
-        },
-      ]);
       setLoading(false);
     });
 
@@ -112,9 +105,9 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
     );
   }
 
-  const containerHeightClass = compact ? 'h-[420px] max-h-[72vh] sm:h-[460px]' : 'h-[520px] max-h-[85vh] sm:h-[600px]';
-  const containerClass = `flex ${containerHeightClass} w-full max-w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950/90 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)] sm:max-w-xl`;
-  const contentClass = `h-full min-h-0 overflow-y-auto rounded-lg bg-slate-900/90 p-3 pr-2 sm:p-4 sm:pr-8`;
+  const containerHeightClass = compact ? 'h-[620px] max-h-[82vh] sm:h-[680px]' : 'h-[760px] max-h-[92vh] sm:h-[820px]';
+  const containerClass = `flex ${containerHeightClass} w-full max-w-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950/90 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)] sm:max-w-3xl`;
+  const contentClass = `h-full min-h-0 overflow-y-auto rounded-lg bg-slate-900/90 p-4 pr-3 sm:p-5 sm:pr-8`;
 
   return (
     <div className="flex w-full justify-center px-0 sm:px-2">
@@ -176,7 +169,7 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/10 bg-slate-900/95 px-3 py-3.5 shadow-inner sm:flex-row sm:items-center sm:px-4">
+        <div className="flex flex-col gap-3 border-t border-white/10 bg-slate-900/95 px-3 py-3.5 shadow-inner sm:flex-row sm:items-center sm:px-5">
           <input
             type="text"
             value={input}
@@ -184,7 +177,7 @@ export function AIBuddyChat({ compact = true, userBg, assistantBg }: AIBuddyChat
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
             placeholder="Ask about brands, sizes, or products..."
-            className="h-14 min-w-0 w-full flex-1 rounded-2xl border border-white/10 bg-slate-900 px-4 text-base text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50 sm:h-11 sm:w-auto sm:text-sm"
+            className="h-25 min-w-0 w-full flex-1 rounded-lg border border-white/10 bg-slate-900 px-4 text-base text-white placeholder-slate-400 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50 sm:h-12 sm:text-base"
             disabled={loading}
           />
           <button
