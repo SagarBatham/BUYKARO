@@ -85,8 +85,14 @@ const addProductToCart = tool(
             // ignore
         }
 
+        // Require an auth token for server-side add-to-cart operations.
+        if (!token) {
+            console.log('addProductToCart aborted: no token provided');
+            return JSON.stringify({ success: false, error: 'unauthenticated', message: 'Please sign in to add items to your cart.' });
+        }
+
         try {
-            const postHeaders = token ? { Authorization: `Bearer ${token}` } : {};
+            const postHeaders = { Authorization: `Bearer ${token}` };
 
             // Debug: confirm whether Authorization header will be sent (no token printed)
             console.log("Posting to cart, hasAuthHeader=", !!postHeaders.Authorization);
@@ -103,10 +109,11 @@ const addProductToCart = tool(
                 }
             );
 
-            return JSON.stringify(response.data);
+            return JSON.stringify({ success: true, data: response.data });
         } catch (err) {
-            console.error(err.response?.data || err.message);
-            return "Failed to add product to cart";
+            console.error('addProductToCart error:', err.response?.data || err.message || err);
+            const message = err.response?.data?.message || err.response?.data || err.message || 'Failed to add product to cart';
+            return JSON.stringify({ success: false, error: 'add_failed', message });
         }
     },
     {

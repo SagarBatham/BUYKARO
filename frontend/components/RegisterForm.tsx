@@ -92,13 +92,13 @@ export function RegisterForm() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="mb-2 block text-sm font-semibold text-slate-300">First Name</label>
-                <input {...register('firstName')} className="w-full rounded-2xl border border-white/10 bg-slate-800/80 px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:bg-slate-800 focus:ring-2 focus:ring-primary/20" placeholder="John" />
+                <input {...register('firstName')} className="w-full rounded-2xl border border-white/10 bg-slate-800/80 px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:bg-slate-800 focus:ring-2 focus:ring-primary/20" placeholder="Enter your first name" />
                 {errors.firstName && <p className="mt-1 text-sm text-red-500">{errors.firstName.message}</p>}
               </div>
 
               <div>
                 <label className="mb-2 block text-sm font-semibold text-slate-300">Last Name</label>
-                <input {...register('lastName')} className="w-full rounded-2xl border border-white/10 bg-slate-800/80 px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:bg-slate-800 focus:ring-2 focus:ring-primary/20" placeholder="Doe" />
+                <input {...register('lastName')} className="w-full rounded-2xl border border-white/10 bg-slate-800/80 px-4 py-3 text-sm text-white outline-none transition focus:border-primary focus:bg-slate-800 focus:ring-2 focus:ring-primary/20" placeholder="Enter your last name" />
                 {errors.lastName && <p className="mt-1 text-sm text-red-500">{errors.lastName.message}</p>}
               </div>
             </div>
